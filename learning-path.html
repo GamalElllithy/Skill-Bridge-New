@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Learning Path</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="learning-path.css">
+</head>
+<body>
+  <header class="path-topbar" id="pathTopbar">
+    <div class="topbar-shell">
+      <a class="path-brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Learning Path</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle type="button" aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="talent-dna.html">Profile</a>
+        <a class="active" href="learning-path.html">Learning</a>
+        <a href="smart-jobs.html">Jobs</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="ghost-link" href="candidate-passport.html">Portfolio</a>
+        <a class="primary-link" href="smart-jobs.html">Target Jobs</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="path-page">
+    <section class="hero-grid">
+      <article class="hero-panel reveal">
+        <span class="eyebrow">Data Analysis Path</span>
+        <h1>أنت على بعد 3 خطوات من أول فرصة ليك</h1>
+        <p>دي مش صفحة كورسات، دي Roadmap ذكية تقودك من تعلم الأساسيات إلى الجاهزية الفعلية للتوظيف.</p>
+
+        <div class="hero-metrics">
+          <div class="hero-metric">
+            <strong id="xpValue">150 XP</strong>
+            <span>XP Progress</span>
+          </div>
+          <div class="hero-metric">
+            <strong id="levelValue">Level 2</strong>
+            <span>Explorer</span>
+          </div>
+          <div class="hero-metric">
+            <strong id="dailyGoalValue">1 / 1</strong>
+            <span>Daily Goal</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="primary-btn" type="button" id="resumePathBtn">كمل المسار</button>
+          <a class="ghost-btn" href="smart-jobs.html">Jobs Based on Your Progress</a>
+        </div>
+      </article>
+
+      <aside class="progress-panel reveal">
+        <div class="progress-circle" aria-label="Path progress">
+          <svg viewBox="0 0 120 120">
+            <circle class="progress-bg" cx="60" cy="60" r="48"></circle>
+            <circle class="progress-value" id="progressCircle" cx="60" cy="60" r="48"></circle>
+          </svg>
+          <div class="progress-copy">
+            <strong id="progressPercent">35%</strong>
+            <span>Path Progress</span>
+          </div>
+        </div>
+
+        <div class="progress-bar-shell">
+          <div class="progress-bar">
+            <span id="progressBar"></span>
+          </div>
+          <div class="progress-legend">
+            <span>35%</span>
+            <span>60%</span>
+            <span>100%</span>
+          </div>
+        </div>
+
+        <div class="smart-box">
+          <strong>AI Insight</strong>
+          <p id="aiInsight">لو كملت الخطوتين الجايين، فرصتك في التوظيف هتزيد 40%.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="path-layout">
+      <section class="timeline-panel reveal">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Roadmap Timeline</span>
+            <h2>الخطة الذكية من التعلم إلى الوظيفة</h2>
+          </div>
+          <div class="section-badges" id="badgeList">
+            <span class="badge-pill">Explorer</span>
+            <span class="badge-pill muted">Python Beginner</span>
+          </div>
+        </div>
+
+        <div class="timeline-track" id="timelineTrack"></div>
+      </section>
+
+      <aside class="side-panel reveal">
+        <div class="side-card">
+          <span class="eyebrow">Smart Reminder</span>
+          <h3>راجع الخطة اليوم</h3>
+          <p id="reminderCopy">آخر نشاط كان من يومين. خلص Task واحد اليوم عشان تحافظ على التقدم.</p>
+        </div>
+
+        <div class="side-card">
+          <span class="eyebrow">Compare With Others</span>
+          <h3>ناس في مستواك</h3>
+          <p>72% من المستخدمين في نفس مستواك أنهوا Step 2 وفتحوا وظائف أكثر.</p>
+        </div>
+
+        <div class="side-card">
+          <span class="eyebrow">Unlock System</span>
+          <div class="unlock-list" id="unlockList">
+            <div>
+              <strong>Unlocked</strong>
+              <span>Data Intern Jobs</span>
+            </div>
+            <div>
+              <strong>Next Unlock</strong>
+              <span>Dashboard Project Access</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <span class="eyebrow">Auto Portfolio</span>
+          <p id="portfolioHint">كل Step تخلصها تضيف دليل جديد في الـ Portfolio وتزود ثقة الشركة فيك.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <section class="learning-modal hidden" id="learningModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <div id="modalContent"></div>
+    </div>
+  </section>
+
+  <div class="toast" id="pathToast"></div>
+
+  <script src="learning-path.js"></script>
+</body>
+</html>

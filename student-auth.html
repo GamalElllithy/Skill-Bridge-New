@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Student Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="student-auth.css">
+</head>
+<body>
+  <header class="auth-topbar" id="studentAuthTopbar">
+    <div class="topbar-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Student Access</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="student-auth.html">Students</a>
+        <a href="company-auth.html">Companies</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="ghost-link" href="company-auth.html">Company Access</a>
+        <a class="primary-link" id="studentAccessLink" href="student-onboarding.html">اكمل الرحلة</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-shell">
+      <aside class="auth-visual reveal">
+        <span class="visual-badge">Guided Start</span>
+        <h1>ابدأ رحلتك من غير لخبطة</h1>
+        <p>سجّل دخولك لو عندك حساب، أو أنشئ حسابك في 3 خطوات واضحة جدًا. بعد كده هننقلك مباشرة إلى الـ onboarding الذكي.</p>
+
+        <div class="visual-steps">
+          <article>
+            <span>1</span>
+            <strong>Access</strong>
+            <p>دخول أو إنشاء حساب جديد</p>
+          </article>
+          <article>
+            <span>2</span>
+            <strong>Setup</strong>
+            <p>معلومات بسيطة وتخصصك الأساسي</p>
+          </article>
+          <article>
+            <span>3</span>
+            <strong>Continue</strong>
+            <p>ادخل على الـ onboarding وكمل الرحلة</p>
+          </article>
+        </div>
+
+        <div class="visual-note">
+          <strong>الهدف واضح</strong>
+          <span>إننا ندخلك بسرعة للخطوة اللي بعدها بدل ما تتوه في الفورم.</span>
+        </div>
+      </aside>
+
+      <section class="auth-card reveal" data-student-auth>
+        <div class="card-head">
+          <span class="section-pill">Student Access</span>
+          <h2>دخول أو إنشاء حساب طالب</h2>
+          <p>اختار الطريقة المناسبة، وسنكمل معك خطوة بخطوة.</p>
+        </div>
+
+        <div class="auth-switch">
+          <button class="switch-btn active" type="button" data-auth-view="login">Login</button>
+          <button class="switch-btn" type="button" data-auth-view="signup">Sign Up</button>
+        </div>
+
+        <div class="auth-view active" data-auth-panel="login">
+          <form class="auth-form" id="studentLoginForm" novalidate>
+            <div class="field">
+              <label for="studentLoginEmail">البريد الإلكتروني</label>
+              <input id="studentLoginEmail" type="email" placeholder="name@email.com">
+            </div>
+
+            <div class="field">
+              <label for="studentLoginPassword">كلمة المرور</label>
+              <div class="password-field">
+                <input id="studentLoginPassword" type="password" placeholder="••••••••">
+                <button class="toggle-pass" type="button" data-toggle-password="#studentLoginPassword">إظهار</button>
+              </div>
+            </div>
+
+            <div class="row-inline">
+              <label class="remember"><input id="rememberStudent" type="checkbox"> تذكّرني</label>
+              <a id="studentContinueLink" href="student-onboarding.html">اكمل رحلتك</a>
+            </div>
+
+            <button class="submit-btn" type="submit">تسجيل الدخول</button>
+
+            <div class="divider"><span>أو</span></div>
+
+            <div class="social-row">
+              <button class="social-btn" type="button">Continue with Google</button>
+              <button class="social-btn linkedin" type="button">Continue with LinkedIn</button>
+            </div>
+
+            <p class="auth-note">ليس لديك حساب؟ <button class="text-btn" type="button" data-auth-view="signup">أنشئ حسابك الآن</button></p>
+          </form>
+        </div>
+
+        <div class="auth-view" data-auth-panel="signup">
+          <div class="signup-progress">
+            <div class="progress-head">
+              <strong>Progress</strong>
+              <span data-progress-label>Step 1 / 3</span>
+            </div>
+            <div class="progress-track"><span data-progress-bar style="width:33%"></span></div>
+            <p data-progress-copy>خلّينا نبدأ بالمعلومات الأساسية فقط.</p>
+          </div>
+
+          <form class="signup-form" novalidate>
+            <section class="signup-step active" data-step="1">
+              <div class="step-head">
+                <h3>معلوماتك الأساسية</h3>
+                <span class="mini-pill">Step 1</span>
+              </div>
+              <div class="grid two">
+                <div class="field">
+                  <label for="studentName">الاسم الكامل</label>
+                  <input id="studentName" type="text" placeholder="Enter your name ">
+                </div>
+                <div class="field">
+                  <label for="studentEmail">البريد الإلكتروني</label>
+                  <input id="studentEmail" type="email" placeholder="name@email.com">
+                </div>
+                <div class="field">
+                  <label for="studentPhone">رقم الهاتف</label>
+                  <input id="studentPhone" type="tel" placeholder="01xxxxxxxxx">
+                </div>
+                <div class="field">
+                  <label for="studentPassword">كلمة المرور</label>
+                  <div class="password-field">
+                    <input id="studentPassword" type="password" placeholder="8 أحرف على الأقل">
+                    <button class="toggle-pass" type="button" data-toggle-password="#studentPassword">إظهار</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="signup-step" data-step="2">
+              <div class="step-head">
+                <h3>اختار مجالك</h3>
+                <span class="mini-pill">Step 2</span>
+              </div>
+              <p class="step-copy">اختيار واحد فقط هنا، والتفاصيل الأعمق هنكملها في الـ onboarding.</p>
+              <div class="category-grid" id="studentCategoryGrid">
+                <button class="category-btn" type="button" data-category="technology">💻 Technology</button>
+                <button class="category-btn" type="button" data-category="business">💼 Business</button>
+                <button class="category-btn" type="button" data-category="design">🎨 Design</button>
+                <button class="category-btn" type="button" data-category="media">🎥 Media</button>
+              </div>
+              <div class="grid two">
+                <div class="field">
+                  <label for="studentLevel">المستوى التعليمي</label>
+                  <select id="studentLevel">
+                    <option class="option_bg" value="">اختر المستوى</option>
+                    <option class="option_bg">High School</option>
+                    <option class="option_bg">Bachelor</option>
+                    <option class="option_bg">Graduate</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="studentOpportunity">الفرصة التي تبحث عنها</label>
+                  <select id="studentOpportunity">
+                    <option class="option_bg" value="">اختر الفرصة</option>
+                    <option class="option_bg">Internship</option>
+                    <option class="option_bg">Part-time</option>
+                    <option class="option_bg">Full-time</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+
+            <section class="signup-step" data-step="3">
+              <div class="step-head">
+                <h3>جهّز البداية</h3>
+                <span class="mini-pill">Step 3</span>
+              </div>
+              <p class="step-copy">اختيارات سريعة فقط، ثم ندخلك مباشرة للـ smart onboarding.</p>
+              <div class="grid two">
+                <div class="field">
+                  <label for="studentLocation">الموقع المفضل</label>
+                  <select id="studentLocation">
+                    <option class="option_bg" value="">اختر الموقع</option>
+                    <option class="option_bg">Remote</option>
+                    <option class="option_bg">Cairo</option>
+                    <option class="option_bg">Alexandria</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="studentStatus">حالتك الحالية</label>
+                  <select id="studentStatus">
+                    <option class="option_bg" value="">اختر الحالة</option>
+                    <option class="option_bg">Available</option>
+                    <option class="option_bg">Student</option>
+                    <option class="option_bg">Internship</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-head">
+                  <strong>اختر 3 مهارات على الأقل</strong>
+                  <span id="skillsCounter">0 selected</span>
+                </div>
+                <div class="skills-grid" id="studentSkillsGrid"></div>
+              </div>
+
+              <div class="field">
+                <label for="studentAbout">نبذة قصيرة</label>
+                <textarea id="studentAbout" placeholder="اكتب سطرين فقط عن هدفك الحالي"></textarea>
+              </div>
+            </section>
+
+            <div class="wizard-actions">
+              <button class="ghost-btn" type="button" data-prev-step>Back</button>
+              <div class="wizard-actions-end">
+                <button class="ghost-btn" type="button" data-next-step>Next</button>
+                <button class="submit-btn hidden" type="button" data-finish-step>أنشئ حسابك وابدأ التحليل</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <section class="smart-auth-overlay hidden" id="smartAuthOverlay" aria-hidden="true">
+    <div class="overlay-core">
+      <div class="overlay-brand">
+        <span class="overlay-logo">SB</span>
+        <strong>SkillBridge</strong>
+      </div>
+      <div class="overlay-copy" id="overlayCopy">
+        <span class="section-pill">Talent Passport</span>
+        <h2 id="overlayTitle">Creating your Talent DNA...</h2>
+        <p id="overlaySubtitle">نجهز دخولك للمرحلة التالية</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="studentAuthToast"></div>
+
+  <script src="student-auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Post Job</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="post-job.css">
+</head>
+<body>
+  <section class="post-intro" id="postIntro" aria-hidden="false">
+    <div class="intro-core">
+      <div class="intro-illustration">
+        <div class="floating-card">New Job</div>
+        <div class="floating-dot dot-a"></div>
+        <div class="floating-dot dot-b"></div>
+        <div class="floating-dot dot-c"></div>
+      </div>
+      <span class="eyebrow">AI Job Blueprint</span>
+      <h1>Let’s create your next amazing hire!</h1>
+      <p>اكتب الوظيفة وكأنك تبني AI Job Blueprint ذكي يربط بين الـ role والمرشحين المناسبين في ثواني.</p>
+      <div class="intro-actions">
+        <button class="primary-btn" type="button" id="startPostingBtn">Start Posting</button>
+        <button class="ghost-btn" type="button" id="loadDraftBtn">Load Last Draft</button>
+      </div>
+    </div>
+  </section>
+
+  <header class="post-topbar" id="postTopbar">
+    <div class="topbar-shell">
+      <a class="post-brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Post Job</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="company-dashboard.html">Dashboard</a>
+        <a class="active" href="post-job.html">Post Job</a>
+        <a href="job-dna.html">Job DNA</a>
+        <a href="smart-jobs.html">Smart Jobs</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="ghost-link" type="button" id="duplicateJobBtn">Duplicate Job</button>
+        <a class="primary-link" href="company-dashboard.html">Back to Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="post-page">
+    <section class="post-shell">
+      <section class="post-main reveal">
+        <div class="wizard-progress">
+          <div class="progress-head">
+            <div>
+              <span class="eyebrow">Interactive Job Wizard</span>
+              <h1>ابنِ وظيفة ذكية خطوة بخطوة</h1>
+            </div>
+            <div class="score-card">
+              <strong id="jobScoreValue">18%</strong>
+              <span>Job Score</span>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <span id="jobProgressBar"></span>
+          </div>
+
+          <div class="progress-meta">
+            <strong id="jobProgressLabel">Step 1 / 6</strong>
+            <span id="jobProgressCopy">ابدأ بأساسيات الوظيفة حتى يظهر الـ live preview بشكل واضح.</span>
+          </div>
+        </div>
+
+        <form class="wizard-card" id="postJobForm" novalidate>
+          <section class="wizard-step active" data-step="1">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 1</span>
+                <h2>Job Basics</h2>
+              </div>
+              <span class="step-tip">الاسم + الفريق + المكان + نوع الوظيفة</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="jobTitle">Job Title</label>
+                <input id="jobTitle" type="text" placeholder="Frontend Developer">
+              </div>
+              <div class="field">
+                <label for="jobDepartment">Department / Team</label>
+                <select id="jobDepartment">
+                  <option class="option_bg"  value="">Choose Team</option>
+                  <option class="option_bg" >Engineering</option>
+                  <option class="option_bg" >Product</option>
+                  <option class="option_bg" >Data</option>
+                  <option class="option_bg" >Marketing</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="jobLocation">Location</label>
+                <select id="jobLocation">
+                  <option class="option_bg"  value="">Choose Location</option>
+                  <option class="option_bg" >Remote</option>
+                  <option class="option_bg" >On-site</option>
+                  <option class="option_bg" >Hybrid</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="jobDuration">Duration</label>
+                <select id="jobDuration">
+                  <option class="option_bg"  value="">Choose Type</option>
+                  <option class="option_bg" >Full-time</option>
+                  <option class="option_bg" >Part-time</option>
+                  <option class="option_bg" >Internship</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="2">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 2</span>
+                <h2>Job Skills</h2>
+              </div>
+              <span class="step-tip">Core + Optional + skill confidence</span>
+            </div>
+
+            <div class="field">
+              <label>Skill Templates</label>
+              <div class="tag-wrap" id="templateSelector">
+                <button class="tag-btn" type="button" data-template="frontend">Frontend Developer</button>
+                <button class="tag-btn" type="button" data-template="data">Data Analyst</button>
+                <button class="tag-btn" type="button" data-template="backend">Backend Developer</button>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="coreSkills">Core Skills</label>
+                <input id="coreSkills" type="text" placeholder="HTML, CSS, JavaScript, React">
+              </div>
+              <div class="field">
+                <label for="optionalSkills">Optional Skills</label>
+                <input id="optionalSkills" type="text" placeholder="TypeScript, Testing, APIs">
+              </div>
+              <div class="field wide">
+                <label for="skillLevel">Skill Level</label>
+                <input id="skillLevel" type="range" min="1" max="3" value="2">
+                <small class="range-copy"><span id="skillLevelValue">Intermediate</span> required level</small>
+              </div>
+            </div>
+
+            <div class="skill-bars" id="skillBars"></div>
+          </section>
+
+          <section class="wizard-step" data-step="3">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 3</span>
+                <h2>Requirements & Experience</h2>
+              </div>
+              <span class="step-tip">Student-ready ولا محتاج senior more</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="minExperience">Minimum Experience</label>
+                <select id="minExperience">
+                  <option class="option_bg"  value="">Choose Experience</option>
+                  <option class="option_bg" >0-6 Months</option>
+                  <option class="option_bg" >1 Year</option>
+                  <option class="option_bg" >2 Years</option>
+                  <option class="option_bg" >3+ Years</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="qualifications">Required Qualifications</label>
+                <select id="qualifications">
+                  <option class="option_bg"  value="">Choose Qualification</option>
+                  <option class="option_bg" >Any Relevant Degree</option>
+                  <option class="option_bg" >Bachelor</option>
+                  <option class="option_bg" >Portfolio + Projects</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="toggle-grid">
+              <label class="toggle-box"><input id="studentReady" type="checkbox" checked><span>Student-ready</span></label>
+              <label class="toggle-box"><input id="internshipFriendly" type="checkbox" checked><span>Internship-friendly</span></label>
+              <label class="toggle-box"><input id="needsSenior" type="checkbox"><span>Needs Senior</span></label>
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="4">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 4</span>
+                <h2>Compensation & Benefits</h2>
+              </div>
+              <span class="step-tip">Live effect على candidate attraction</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="salaryRange">Salary Range</label>
+                <input id="salaryRange" type="text" placeholder="8,000 - 12,000 EGP">
+              </div>
+              <div class="field">
+                <label for="remoteFlex">Remote Flexibility</label>
+                <input id="remoteFlex" type="range" min="0" max="100" value="60">
+                <small class="range-copy"><span id="remoteFlexValue">60%</span> flexibility level</small>
+              </div>
+            </div>
+
+            <div class="tag-wrap" id="benefitsSelector">
+              <button class="tag-btn" type="button" data-benefit="Flexible Hours">Flexible Hours</button>
+              <button class="tag-btn" type="button" data-benefit="Mentorship">Mentorship</button>
+              <button class="tag-btn" type="button" data-benefit="Learning Budget">Learning Budget</button>
+              <button class="tag-btn" type="button" data-benefit="Remote Days">Remote Days</button>
+            </div>
+
+            <article class="tip-card">
+              <strong>Salary Impact</strong>
+              <p id="salaryImpactText">إضافة salary range واضح قد ترفع التفاعل من المرشحين المناسبين.</p>
+            </article>
+          </section>
+
+          <section class="wizard-step" data-step="5">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 5</span>
+                <h2>Smart Job Analysis</h2>
+              </div>
+              <span class="step-tip">السيستم يحلل quality المتوقعة</span>
+            </div>
+
+            <div class="analysis-grid">
+              <div class="analysis-ring-card">
+                <div class="analysis-ring">
+                  <svg viewBox="0 0 120 120">
+                    <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+                    <circle class="ring-value" id="analysisRing" cx="60" cy="60" r="48"></circle>
+                  </svg>
+                  <div class="ring-copy">
+                    <strong id="analysisMatchValue">78%</strong>
+                    <span>Predicted Match</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="analysis-breakdown" id="analysisBreakdown"></div>
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="6">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 6</span>
+                <h2>AI Recommendations & Final Review</h2>
+              </div>
+              <span class="step-tip">شريك قرار وليس فورم فقط</span>
+            </div>
+
+            <div class="review-card">
+              <strong>AI Recommendations</strong>
+              <div class="recommendation-list" id="aiRecommendations"></div>
+            </div>
+
+            <div class="review-card">
+              <strong>Final Review</strong>
+              <div class="summary-list" id="jobSummary"></div>
+            </div>
+          </section>
+
+          <div class="wizard-actions">
+            <button class="ghost-btn" type="button" id="resetJobBtn">Reset</button>
+            <div class="wizard-actions-end">
+              <button class="ghost-btn" type="button" id="previewJobBtn">Preview Job</button>
+              <button class="ghost-btn" type="button" id="saveDraftBtn">Save Draft 💾</button>
+              <button class="ghost-btn" type="button" id="prevJobStepBtn">Back ←</button>
+              <button class="primary-btn" type="button" id="nextJobStepBtn">Next →</button>
+              <button class="primary-btn hidden" type="button" id="publishJobBtn">Publish Job ✅</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <aside class="post-side reveal">
+        <article class="preview-card">
+          <span class="eyebrow">Live Preview</span>
+          <div class="job-preview-card">
+            <div class="job-preview-top">
+              <strong id="previewJobTitle">New Job Title</strong>
+              <span class="status-pill" id="previewStatus">Draft</span>
+            </div>
+            <p id="previewCompany">Your Company • Remote</p>
+            <div class="preview-tags" id="previewMetaTags"></div>
+            <div class="preview-tags" id="previewSkillTags"></div>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <span class="eyebrow">Candidate Preview</span>
+          <div class="candidate-carousel" id="candidatePreview"></div>
+        </article>
+
+        <article class="preview-card">
+          <span class="eyebrow">Smart Suggestions</span>
+          <div class="suggestions-list" id="jobSuggestions"></div>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="postJobToast"></div>
+
+  <script src="post-job.js"></script>
+</body>
+</html>

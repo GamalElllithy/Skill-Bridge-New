@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Job DNA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="job-dna.css">
+</head>
+<body>
+  <header class="job-topbar" id="jobTopbar">
+    <div class="topbar-shell">
+      <a class="job-brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Job DNA</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle type="button" aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="smart-jobs.html">Smart Jobs</a>
+        <a class="active" href="job-dna.html">Job DNA</a>
+        <a href="candidate-passport.html">Passport</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="ghost-link" href="candidate-passport.html">View Full Candidate Passport</a>
+        <button class="primary-link" type="button" id="heroApplyBtn">Apply Now</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="job-page">
+    <section class="hero-grid">
+      <article class="hero-card reveal">
+        <div class="hero-top">
+          <div>
+            <span class="eyebrow">AI Career Analyzer</span>
+            <h1 id="jobTitle">Frontend Developer</h1>
+            <p class="hero-company" id="jobCompany">TechNova • Remote</p>
+          </div>
+          <div class="hero-actions">
+            <button class="primary-link action-btn" type="button" id="applyNowBtn">Apply Now</button>
+            <button class="ghost-link action-btn" type="button" id="saveJobBtn">Save Job</button>
+            <button class="ghost-link action-btn" type="button" id="improveMatchBtn">Improve Match</button>
+          </div>
+        </div>
+
+        <div class="picker-strip" id="jobPicker"></div>
+
+        <div class="hero-summary-grid">
+          <div class="match-ring-card">
+            <div class="match-ring">
+              <svg viewBox="0 0 120 120">
+                <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+                <circle class="ring-value" id="matchRing" cx="60" cy="60" r="48"></circle>
+              </svg>
+              <div class="ring-copy">
+                <strong id="overallMatch">78%</strong>
+                <span>MATCH</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-box">
+            <strong>Quick Summary</strong>
+            <p id="quickSummary">Candidate matches 78% of requirements, strong in frontend basics, needs React experience.</p>
+          </div>
+
+          <div class="decision-box" id="decisionBox">
+            <strong>Hiring Decision</strong>
+            <h3 id="decisionTitle">Strong Candidate</h3>
+            <p id="decisionCopy">مناسب للمرحلة التالية مع Gap واحد واضح فقط.</p>
+          </div>
+        </div>
+      </article>
+
+      <aside class="side-stack">
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Why You Match</span>
+              <h2>AI Explanation</h2>
+            </div>
+          </div>
+          <p id="whyMatchCopy">أنت مناسب للوظيفة دي لأنك تمتلك مهارات قوية في HTML وCSS، لكن تحتاج تحسين React.</p>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Time To Hire</span>
+              <h2>Estimated Readiness</h2>
+            </div>
+          </div>
+          <p class="big-number" id="timeToHire">2 Weeks</p>
+          <p id="aiRecommendation">Recommended to interview after completing React module.</p>
+        </article>
+      </aside>
+    </section>
+
+    <section class="content-grid">
+      <section class="main-column">
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Smart Match Breakdown</span>
+              <h2>ليه جالك الرقم ده</h2>
+            </div>
+          </div>
+          <div class="breakdown-list" id="breakdownList"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Job DNA Structure</span>
+              <h2>تركيب الوظيفة نفسها</h2>
+            </div>
+          </div>
+          <div class="dna-structure">
+            <div class="dna-block">
+              <strong>Required Skills</strong>
+              <div class="chip-list" id="requiredSkills"></div>
+            </div>
+            <div class="dna-block">
+              <strong>Soft Skills</strong>
+              <div class="chip-list" id="softSkills"></div>
+            </div>
+            <div class="dna-block">
+              <strong>Level</strong>
+              <div class="chip-list"><span class="dna-chip" id="jobLevel">Junior</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Your DNA vs Job DNA</span>
+              <h2>مقارنة مباشرة وواضحة</h2>
+            </div>
+          </div>
+          <div class="comparison-table">
+            <div class="table-head">
+              <span>Skill</span>
+              <span>You</span>
+              <span>Job</span>
+              <span>Confidence</span>
+            </div>
+            <div id="comparisonRows"></div>
+          </div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Skill Gap Detector</span>
+              <h2>إيه اللي ناقصك علشان تقرب من 100%</h2>
+            </div>
+          </div>
+          <div class="gap-grid" id="gapGrid"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Boost Plan</span>
+              <h2>لو عملت ده توصل لكام</h2>
+            </div>
+          </div>
+          <div class="boost-list" id="boostList"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Growth Projection</span>
+              <h2>توقع نمو الـ Match</h2>
+            </div>
+          </div>
+          <div class="growth-grid" id="growthProjection"></div>
+        </article>
+      </section>
+
+      <aside class="side-column">
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Match Ready Jobs</span>
+              <h2>وظائف شبهها لكن أسهل عليك</h2>
+            </div>
+          </div>
+          <div class="match-ready-list" id="matchReadyJobs"></div>
+        </article>
+
+        <article class="panel-card reveal recruiter-only" id="candidateRankingPanel">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Top Candidates</span>
+              <h2>مقارنة سريعة بين المتقدمين</h2>
+            </div>
+          </div>
+          <div class="ranking-list" id="candidateRanking"></div>
+        </article>
+
+        <article class="panel-card reveal recruiter-only" id="redFlagsPanel">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Red Flags</span>
+              <h2>ملاحظات لازم تتشاف</h2>
+            </div>
+          </div>
+          <div class="flag-list" id="redFlags"></div>
+        </article>
+
+        <article class="panel-card reveal recruiter-only" id="notesPanel">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Recruiter Notes</span>
+              <h2>اكتب قرارك بسرعة</h2>
+            </div>
+          </div>
+          <textarea class="note-area" id="recruiterNotes" placeholder="Promising but needs more React practice"></textarea>
+          <button class="primary-link note-save" type="button" id="saveNotesBtn">Save Notes</button>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="jobDnaToast"></div>
+
+  <script src="job-dna.js"></script>
+</body>
+</html>

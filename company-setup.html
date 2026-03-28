@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Company Setup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="company-setup.css">
+</head>
+<body data-industry="default">
+  <section class="setup-intro" id="setupIntro" aria-hidden="false">
+    <div class="intro-core">
+      <div class="intro-glow"></div>
+      <span class="intro-pill">Company DNA Setup</span>
+      <h1>Let’s build your hiring intelligence</h1>
+      <p>خليني أفهم شركتك علشان أجيبلك أحسن ناس، بأسرع setup ذكي وأوضح Hiring Profile ممكن.</p>
+      <div class="intro-actions">
+        <button class="primary-btn" type="button" id="startSetupBtn">Start Setup</button>
+        <button class="ghost-btn" type="button" id="continueSavedBtn">Continue Saved Setup</button>
+      </div>
+    </div>
+  </section>
+
+  <header class="setup-topbar" id="setupTopbar">
+    <div class="topbar-shell">
+      <a class="setup-brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Company Setup</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="company-auth.html">Access</a>
+        <a class="active" href="company-setup.html">Setup</a>
+        <a href="company-dashboard.html">Dashboard</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="ghost-link" type="button" id="saveLaterTopBtn">Save & Continue Later</button>
+        <a class="primary-link" href="company-dashboard.html">Company Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="setup-page">
+    <section class="wizard-shell">
+      <section class="wizard-main reveal">
+        <div class="wizard-progress">
+          <div class="progress-head">
+            <div>
+              <span class="eyebrow">Interactive AI Company Onboarding</span>
+              <h1>ابني Hiring Profile ذكي لشركتك</h1>
+            </div>
+            <div class="score-card">
+              <strong id="setupScoreValue">15%</strong>
+              <span>Setup Score</span>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <span id="setupProgressBar"></span>
+          </div>
+
+          <div class="progress-meta">
+            <strong id="progressLabel">Step 1 / 6</strong>
+            <span id="progressCopy">ابدأ بهوية الشركة، فهي أساس كل الترشيحات الذكية.</span>
+          </div>
+        </div>
+
+        <form class="wizard-card" id="companySetupForm" novalidate>
+          <section class="wizard-step active" data-step="1">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 1</span>
+                <h2>Company Identity</h2>
+              </div>
+              <span class="step-tip">Live Preview يتحدث فورًا</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="companyName">Company Name</label>
+                <input id="companyName" type="text" placeholder="Enter Your Company Name">
+              </div>
+              <div class="field">
+                <label for="companyLogo">Logo / Initials</label>
+                <input id="companyLogo" type="text" placeholder="TN">
+              </div>
+              <div class="field">
+                <label for="companyLocation">Location</label>
+                <input id="companyLocation" type="text" placeholder="Cairo, Egypt">
+              </div>
+              <div class="field">
+                <label for="companyWebsite">Website</label>
+                <input id="companyWebsite" type="text" placeholder="technova.ai">
+              </div>
+              <div class="field wide">
+                <label for="companyMission">Mission & Values</label>
+                <textarea id="companyMission" placeholder="What does your company believe in, and what kind of impact are you building?"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="2">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 2</span>
+                <h2>Industry & Focus</h2>
+              </div>
+              <span class="step-tip">اختيارك هنا يغيّر suggestions والهوية البصرية</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="companyIndustry">Industry</label>
+                <select id="companyIndustry">
+                  <option class="option_bg" value="">Choose Industry</option>
+                  <option class="option_bg" value="tech">Technology</option>
+                  <option class="option_bg" value="ai">AI / Data</option>
+                  <option class="option_bg" value="fintech">Fintech</option>
+                  <option class="option_bg" value="design">Design Studio</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="companySubfield">Sub-field</label>
+                <select id="companySubfield">
+                  <option class="option_bg" value="">Choose Sub-field</option>
+                </select>
+              </div>
+              <div class="field wide">
+                <label>Suggested Skills</label>
+                <div class="tag-selector" id="suggestedSkills"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="3">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 3</span>
+                <h2>Company Size & Hiring Style</h2>
+              </div>
+              <span class="step-tip">Smart defaults تتغير حسب الحجم</span>
+            </div>
+
+            <div class="choice-grid" id="sizeSelector">
+              <button class="choice-card" type="button" data-size="Startup">
+                <strong>Startup</strong>
+                <p>Fast decisions, flexible hiring</p>
+              </button>
+              <button class="choice-card" type="button" data-size="Medium">
+                <strong>Medium</strong>
+                <p>Balanced growth with stable team needs</p>
+              </button>
+              <button class="choice-card" type="button" data-size="Enterprise">
+                <strong>Enterprise</strong>
+                <p>Careful process with structured approvals</p>
+              </button>
+            </div>
+
+            <div class="choice-grid compact" id="hiringStyleSelector">
+              <button class="choice-card" type="button" data-style="Fast">
+                <strong>Fast ⚡</strong>
+                <p>Move quickly on strong candidates</p>
+              </button>
+              <button class="choice-card" type="button" data-style="Balanced">
+                <strong>Balanced</strong>
+                <p>Speed with a moderate review process</p>
+              </button>
+              <button class="choice-card" type="button" data-style="Careful">
+                <strong>Careful 🎯</strong>
+                <p>More validation before the final decision</p>
+              </button>
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="4">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 4</span>
+                <h2>Job Types & Roles</h2>
+              </div>
+              <span class="step-tip">Tag selection + icons + suggestions</span>
+            </div>
+
+            <div class="tag-selector large" id="rolesSelector">
+              <button class="role-tag" type="button" data-role="Frontend">Frontend</button>
+              <button class="role-tag" type="button" data-role="Backend">Backend</button>
+              <button class="role-tag" type="button" data-role="Data">Data</button>
+              <button class="role-tag" type="button" data-role="Marketing">Marketing</button>
+              <button class="role-tag" type="button" data-role="UI/UX">UI/UX</button>
+              <button class="role-tag" type="button" data-role="Operations">Operations</button>
+            </div>
+
+            <div class="field wide">
+              <label for="coreTech">Core Technologies Used</label>
+              <input id="coreTech" type="text" placeholder="React, Node.js, SQL, Figma">
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="5">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 5</span>
+                <h2>Define Your Ideal Candidate</h2>
+              </div>
+              <span class="step-tip">هنا يتكوّن Company DNA</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="skillLevel">Skill Level</label>
+                <select id="skillLevel">
+                  <option class="option_bg" value="">Choose Level</option>
+                  <option class="option_bg">Beginner</option>
+                  <option class="option_bg">Intermediate</option>
+                  <option class="option_bg">Advanced</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="workStyle">Work Style</label>
+                <select id="workStyle">
+                  <option class="option_bg" value="">Choose Work Style</option>
+                  <option class="option_bg">Remote</option>
+                  <option class="option_bg">On-site</option>
+                  <option class="option_bg">Hybrid</option>
+                </select>
+              </div>
+              <div class="field wide">
+                <label>Personality</label>
+                <div class="tag-selector" id="personalitySelector">
+                  <button class="role-tag" type="button" data-personality="Team Player">Team Player</button>
+                  <button class="role-tag" type="button" data-personality="Leader">Leader</button>
+                  <button class="role-tag" type="button" data-personality="Fast Learner">Fast Learner</button>
+                  <button class="role-tag" type="button" data-personality="Analytical">Analytical</button>
+                </div>
+              </div>
+              <div class="field wide">
+                <label>Company Culture Tags</label>
+                <div class="tag-selector" id="cultureSelector">
+                  <button class="role-tag" type="button" data-culture="Innovative">Innovative</button>
+                  <button class="role-tag" type="button" data-culture="Flexible">Flexible</button>
+                  <button class="role-tag" type="button" data-culture="Team-oriented">Team-oriented</button>
+                  <button class="role-tag" type="button" data-culture="Ambitious">Ambitious</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="wizard-step" data-step="6">
+            <div class="step-head">
+              <div>
+                <span class="eyebrow">Step 6</span>
+                <h2>Smart Preferences</h2>
+              </div>
+              <span class="step-tip">آخر خطوة قبل التشغيل الذكي</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="minimumMatch">Minimum Match %</label>
+                <input id="minimumMatch" type="range" min="50" max="95" value="70">
+                <small class="range-copy"><span id="minimumMatchValue">70%</span> minimum candidate match</small>
+              </div>
+              <div class="field">
+                <label for="hiringTimeline">Hiring Timeline</label>
+                <input id="hiringTimeline" type="range" min="1" max="3" value="2">
+                <small class="range-copy"><span id="hiringTimelineValue">Balanced</span> hiring speed</small>
+              </div>
+              <label class="toggle-box">
+                <input id="acceptLearners" type="checkbox" checked>
+                <span>Accept learners</span>
+              </label>
+              <label class="toggle-box">
+                <input id="internshipFriendly" type="checkbox" checked>
+                <span>Internship friendly</span>
+              </label>
+            </div>
+
+            <article class="ai-preview-card">
+              <span class="eyebrow">AI Preview</span>
+              <h3>Your Hiring Profile is Ready</h3>
+              <p id="aiPreviewText">You will receive fast-learning junior frontend developers with strong fundamentals.</p>
+            </article>
+          </section>
+
+          <div class="wizard-actions">
+            <button class="ghost-btn" type="button" id="resetSetupBtn">Reset</button>
+            <div class="wizard-actions-end">
+              <button class="ghost-btn" type="button" id="prevStepBtn">Back</button>
+              <button class="ghost-btn" type="button" id="saveLaterBtn">Save & Continue Later</button>
+              <button class="primary-btn" type="button" id="nextStepBtn">Next →</button>
+              <button class="primary-btn hidden" type="button" id="finishSetupBtn">Start Hiring Smart</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <aside class="wizard-side reveal">
+        <article class="preview-card">
+          <div class="preview-head">
+            <span class="preview-logo" id="previewLogo">SB</span>
+            <div>
+              <strong id="previewCompanyName">Your Company</strong>
+              <p id="previewIndustry">Industry • Focus</p>
+            </div>
+          </div>
+          <p class="preview-copy" id="previewMission">Your live company card appears here as you fill out the setup.</p>
+          <div class="preview-meta">
+            <span id="previewLocation">Remote</span>
+            <span id="previewWebsite">company.com</span>
+          </div>
+          <div class="preview-tags" id="previewRoles"></div>
+        </article>
+
+        <article class="preview-card">
+          <span class="eyebrow">Smart Suggestions</span>
+          <h3>Recommended Setup</h3>
+          <div class="suggestion-list" id="smartSuggestions"></div>
+        </article>
+
+        <article class="preview-card">
+          <span class="eyebrow">Matching Simulation</span>
+          <div class="simulation-stat">
+            <strong id="simulationValue">72%</strong>
+            <span>Top Candidate Quality</span>
+          </div>
+          <div class="simulation-bar">
+            <span id="simulationBar"></span>
+          </div>
+          <p id="simulationCopy">Based on your inputs, you will get a strong pool of early-career candidates.</p>
+        </article>
+
+        <article class="preview-card">
+          <span class="eyebrow">Dashboard Preview</span>
+          <div class="dashboard-preview">
+            <div class="preview-row">
+              <strong>Candidate Ranking</strong>
+              <span>89%</span>
+            </div>
+            <div class="preview-row">
+              <strong>Smart Filters</strong>
+              <span>Ready</span>
+            </div>
+            <div class="preview-row">
+              <strong>Hiring DNA</strong>
+              <span id="dnaStatus">Building</span>
+            </div>
+          </div>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="setupToast"></div>
+
+  <script src="company-setup.js"></script>
+</body>
+</html>

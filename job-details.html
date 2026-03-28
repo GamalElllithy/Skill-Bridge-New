@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Job Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="job-details.css">
+</head>
+<body>
+  <header class="details-topbar" id="detailsTopbar">
+    <div class="topbar-shell">
+      <a class="details-brand" href="student-dashboard.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Job Details</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="smart-jobs.html">Smart Jobs</a>
+        <a class="active" href="job-details.html">Job Details</a>
+        <a href="learning-path.html">Learning</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="ghost-link" href="job-dna.html">Job DNA</a>
+        <a class="primary-link" href="smart-jobs.html">Back to Jobs</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="details-page">
+    <section class="hero-grid">
+      <article class="hero-card reveal">
+        <div class="hero-top">
+          <div class="company-wrap">
+            <div class="company-logo" id="companyLogo">TN</div>
+            <div>
+              <span class="eyebrow">Your Real Opportunity</span>
+              <h1 id="jobTitle">Junior Data Analyst</h1>
+              <p id="companyLine">TechNova • Cairo / Remote • Internship</p>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="primary-btn" type="button" id="applyNowBtn">Apply Now</button>
+            <button class="ghost-btn" type="button" id="saveJobBtn">Save Job</button>
+            <button class="ghost-btn" type="button" id="shareJobBtn">Share</button>
+          </div>
+        </div>
+
+        <div class="hero-grid-inner">
+          <div class="match-card">
+            <div class="match-ring">
+              <svg viewBox="0 0 120 120">
+                <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+                <circle class="ring-value" id="matchRing" cx="60" cy="60" r="48"></circle>
+              </svg>
+              <div class="ring-copy">
+                <strong id="matchValue">78%</strong>
+                <span>Match</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <strong>Why You Match</strong>
+            <p id="whyMatchCopy">You match 78% of required skills. Your strong points: HTML, CSS, JavaScript. Skills to improve: React, API Integration.</p>
+          </div>
+
+          <aside class="sticky-summary" id="stickySummary">
+            <strong>Quick Summary</strong>
+            <p id="summaryStickyCopy">Strong in fundamentals, needs one or two improvements to become highly competitive.</p>
+            <div class="summary-actions">
+              <button class="primary-btn compact" type="button" id="stickyApplyBtn">Apply</button>
+              <button class="ghost-btn compact" type="button" id="trackJobBtn">Track</button>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <section class="main-column">
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Progressive Match Highlights</span>
+              <h2>أسباب التوافق بالتفصيل</h2>
+            </div>
+          </div>
+          <div class="accordion-list" id="matchAccordion"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Required Skills</span>
+              <h2>خريطة المهارات والفجوة</h2>
+            </div>
+          </div>
+          <div class="skills-map" id="skillsMap"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Job Description</span>
+              <h2>المهام والمسؤوليات</h2>
+            </div>
+          </div>
+          <div class="accordion-list" id="descriptionAccordion"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Action Plan</span>
+              <h2>خطوات واضحة لرفع فرصك</h2>
+            </div>
+          </div>
+          <div class="roadmap-list" id="actionPlan"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Interactive Timeline</span>
+              <h2>تطورك مقابل الوظيفة</h2>
+            </div>
+          </div>
+          <div class="timeline-chart" id="timelineChart"></div>
+        </article>
+      </section>
+
+      <aside class="side-column">
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Candidate Insights & Tips</span>
+              <h2>نصائح ذكية</h2>
+            </div>
+          </div>
+          <div class="tips-list" id="tipsList"></div>
+          <a class="primary-link block-link" href="learning-path.html">Go to Learning Path</a>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Student-Friendly Analytics</span>
+              <h2>تحليل سريع يحفزك</h2>
+            </div>
+          </div>
+          <div class="analytics-list" id="analyticsList"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Other Jobs You May Match</span>
+              <h2>فرص أخرى مناسبة</h2>
+            </div>
+          </div>
+          <div class="other-jobs-list" id="otherJobs"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Motivation</span>
+              <h2>Badges & Feedback</h2>
+            </div>
+          </div>
+          <div class="badge-row" id="badgeRow"></div>
+          <p class="feedback-line" id="feedbackLine">You’re almost ready for this role!</p>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="detailsToast"></div>
+
+  <script src="job-details.js"></script>
+</body>
+</html>

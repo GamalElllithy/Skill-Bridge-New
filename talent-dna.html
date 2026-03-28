@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Talent DNA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talent-dna.css">
+</head>
+<body>
+  <header class="dna-topbar" id="dnaTopbar">
+    <div class="topbar-shell">
+      <a class="brand" href="student-dashboard.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Talent DNA</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a class="active" href="talent-dna.html">Talent DNA</a>
+        <a href="learning-path.html">Learning</a>
+        <a href="smart-jobs.html">Jobs</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="ghost-btn small-btn" href="candidate-passport.html">Passport</a>
+        <a class="primary-btn small-btn" href="learning-path.html">Next Step</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="dna-page">
+    <section class="hero-grid">
+      <article class="hero-card reveal">
+        <span class="eyebrow">Your Result</span>
+        <h1 id="dnaHeroTitle">أنت الأقرب إلى Data Analysis</h1>
+        <p id="dnaHeroCopy">تحليلك الحالي يوضح أنك تميل إلى التفكير المنظم، حل المشكلات، وتحويل المعلومات إلى قرارات واضحة.</p>
+
+        <div class="hero-meta">
+          <span class="meta-pill" id="dnaPersona">Analyst Mindset</span>
+          <span class="meta-pill" id="dnaTrack">Data Analysis</span>
+          <span class="meta-pill" id="dnaMatch">82% Match</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="primary-btn" id="dnaPrimaryAction" href="learning-path.html">ابدأ خطوة التعلم</a>
+          <a class="ghost-btn" id="dnaSecondaryAction" href="smart-jobs.html">شاهد الوظائف المناسبة</a>
+        </div>
+      </article>
+
+      <aside class="summary-card reveal">
+        <div class="summary-head">
+          <strong id="profileName">الطالب</strong>
+          <span id="profileAvatar">GA</span>
+        </div>
+
+        <div class="summary-block">
+          <span class="summary-label">أنت هنا الآن</span>
+          <strong id="journeyStageTitle">Build Skills</strong>
+          <p id="journeyStageCopy">النتيجة ظهرت، والخطوة الأهم الآن هي تقوية المهارة التالية ثم التحرك نحو أول فرصة مناسبة.</p>
+        </div>
+
+        <div class="progress-box">
+          <div class="progress-head">
+            <strong>Journey Progress</strong>
+            <span id="journeyProgressValue">60%</span>
+          </div>
+          <div class="progress-track">
+            <span id="journeyProgressBar" style="width: 60%;"></span>
+          </div>
+        </div>
+
+        <div class="progress-box">
+          <div class="progress-head">
+            <strong>Profile Completion</strong>
+            <span id="profileCompletionValue">78%</span>
+          </div>
+          <div class="progress-track">
+            <span id="profileCompletionBar" style="width: 78%;"></span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="flow-strip reveal" id="flowStrip">
+      <article class="flow-step is-done">
+        <span>1</span>
+        <strong>Discover</strong>
+        <p>عرفت مجالك ونتيجتك الأساسية.</p>
+      </article>
+      <article class="flow-step is-active" id="skillsStep">
+        <span>2</span>
+        <strong>Build Skills</strong>
+        <p>طوّر أهم مهارة ترفع فرصك أسرع.</p>
+      </article>
+      <article class="flow-step" id="applyStep">
+        <span>3</span>
+        <strong>Apply</strong>
+        <p>بعد الخطوة الجاية هتبقى أقرب للتقديم.</p>
+      </article>
+      <article class="flow-step" id="hireStep">
+        <span>4</span>
+        <strong>Get Hired</strong>
+        <p>حافظ على التقدم وكمّل الرحلة.</p>
+      </article>
+    </section>
+
+    <section class="insight-grid">
+      <article class="panel-card reveal">
+        <div class="card-head">
+          <div>
+            <span class="eyebrow">Core Read</span>
+            <h2>الصورة الواضحة عنك</h2>
+          </div>
+        </div>
+
+        <div class="list-grid">
+          <div class="list-box">
+            <strong>نقاط قوتك</strong>
+            <ul id="dnaStrengths" class="clean-list"></ul>
+          </div>
+
+          <div class="list-box">
+            <strong>Skill Gaps</strong>
+            <ul id="dnaWeaknesses" class="clean-list"></ul>
+          </div>
+
+          <div class="list-box">
+            <strong>المسارات المناسبة</strong>
+            <ul id="dnaPaths" class="clean-list"></ul>
+          </div>
+
+          <div class="list-box">
+            <strong>Thinking Style</strong>
+            <p id="dnaStyles" class="body-copy"></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel-card reveal">
+        <div class="card-head">
+          <div>
+            <span class="eyebrow">Talent DNA</span>
+            <h2>لماذا هذه النتيجة؟</h2>
+          </div>
+        </div>
+
+        <div class="dna-bars" id="dnaBars"></div>
+
+        <div class="next-box">
+          <strong>Next Action</strong>
+          <p id="dnaNextStep">ابدأ بأهم مهارة ناقصة لديك، ثم افتح الـ Dashboard أو الـ Jobs حسب مرحلتك الحالية.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel-card reveal">
+        <div class="card-head">
+          <div>
+            <span class="eyebrow">Personal Roadmap</span>
+            <h2>الخطة الأقصر للمستخدم</h2>
+          </div>
+        </div>
+        <div class="roadmap-list" id="roadmapList"></div>
+      </article>
+
+      <article class="panel-card reveal">
+        <div class="card-head">
+          <div>
+            <span class="eyebrow">Profile Proof</span>
+            <h2>ما الذي يدعم ملفك الآن؟</h2>
+          </div>
+        </div>
+
+        <div class="mini-summary" id="passportSummary"></div>
+        <div class="tag-list" id="badgeList"></div>
+        <div class="project-list" id="projectList"></div>
+      </article>
+    </section>
+
+    <section class="cta-panel reveal">
+      <div>
+        <span class="eyebrow">No Confusion</span>
+        <h2>الخطوة التالية واضحة جدًا</h2>
+        <p id="finalCtaCopy">لو هدفك تزوّد فرصك بسرعة، ابدأ من خطة التعلم. ولو أنت جاهز، افتح الوظائف المناسبة الآن.</p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="primary-btn" href="learning-path.html">Start Learning</a>
+        <a class="ghost-btn" href="smart-jobs.html">Open Smart Jobs</a>
+        <a class="ghost-btn" href="student-dashboard.html">رجوع للـ Dashboard</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="talent-dna.js"></script>
+</body>
+</html>

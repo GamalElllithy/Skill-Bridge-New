@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillBridge منصة بسيطة تساعدك تكتشف مجالك وتبدأ بخطوة واضحة.">
+  <title>SkillBridge | اكتشف مجالك الحقيقي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+    <div class="loading-panel">
+      <div class="brand-mark brand-mark-lg">
+        <span class="brand-mark-core">SB</span>
+      </div>
+      <p class="loading-label">SkillBridge AI</p>
+      <h1 class="loading-message" id="loadingMessage">Analyzing your skills...</h1>
+      <div class="loading-bar">
+        <span id="loadingBar"></span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="SkillBridge">
+        <div class="brand-mark">
+          <span class="brand-mark-core">SB</span>
+        </div>
+        <div class="brand-copy">
+          <strong>SkillBridge</strong>
+          <small>Talent DNA Meets Opportunity</small>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home">الرئيسية</a>
+        <a href="#path">المسار</a>
+        <a href="#quiz">التحليل</a>
+        <a href="#next-step">بعد النتيجة</a>
+        <a href="./contact.html"> تواصل معنا </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="company-auth.html">للشركات</a>
+        <a class="btn btn-primary" href="#quiz">ابدأ الآن</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Simple Career Start</span>
+<p class="hero-subtext">
+في أقل من دقيقة، هنفهم طريقة تفكيرك ونرشح لك المسار الأقرب ليك — بدون تعقيد، بدون تشتت.
+</p>
+<h1>اكتشف مجالك الحقيقي </h1>          <p class="hero-subtext">جاوب 3 أسئلة سريعة، شوف نتيجتك، ثم خذ خطوة واحدة واضحة تكمل بها رحلتك.</p>
+
+  
+            <ul class="hero-points">
+  <li>تحليل ذكي مبني على شخصيتك</li>
+  <li>نتيجة واضحة بدون مصطلحات معقدة</li>
+  <li>خطوة عملية تبدأ بيها فورًا</li>
+</ul>
+          
+
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-large" href="#quiz">ابدأ تحليل مهاراتك الآن</a>
+            <a class="btn btn-ghost btn-large" href="student-dashboard.html">لديك حساب؟ افتح الـ Dashboard</a>
+          </div>
+
+          <div class="hero-dynamic">
+            <span class="dynamic-dot"></span>
+<p id="heroDynamicText">
+معظم الناس بيضيعوا سنين وهم مش فاهمين هم مناسبين لإيه
+</p>          </div>
+        </div>
+
+        <div class="hero-side reveal">
+          <article class="hero-card main-card">
+            <div class="hero-card-head">
+              <span>Talent DNA Snapshot</span>
+            </div>
+            <h3>نتيجة أولية واضحة</h3>
+            <p>التحليل هنا ليس حكمًا نهائيًا، لكنه بداية ذكية توضح لك أقرب اتجاه مهني بناءً على طريقة تفكيرك وتفضيلاتك.</p>
+            <div class="mini-progress"><span style="width:82%"></span></div>
+            <div class="chip-row">
+              <span class="chip">تحليل</span>
+              <span class="chip">وضوح</span>
+              <span class="chip">فرص</span>
+            </div>
+          </article>
+
+          <article class="hero-card side-note">
+            <small>Next Best Step</small>
+            <strong>ابدأ Quiz مدته 60 ثانية</strong>
+            <p>وبعدها هتشوف نتيجة واضحة مع خطوة تكمّل بها رحلتك فورًا.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="simple-path-section" id="path">
+      <div class="container">
+        <div class="section-heading reveal compact-heading">
+          <span class="eyebrow">Clear Path</span>
+<h2>رحلة بسيطة من أول دخول لحد أول قرار</h2>
+<p>
+صممنا التجربة بحيث تمشي خطوة بخطوة بدون أي تشتت — من أول دخولك لحد أول قرار مهم في حياتك المهنية.
+</p>
+</div>
+
+        <div class="path-grid">
+          <article class="path-card reveal">
+            <span class="path-number">1</span>
+            <h3>ابدأ التحليل</h3>
+            <p>جاوب 3 أسئلة سريعة عن طريقة تفكيرك وميولك.</p>
+          </article>
+
+          <article class="path-card reveal">
+            <span class="path-number">2</span>
+          <h3>ابدأ التحليل</h3>
+<p>جاوب على أسئلة سريعة مصممة تكشف طريقة تفكيرك واهتماماتك.</p> 
+          </article>
+
+          <article class="path-card reveal">
+            <span class="path-number">3</span>
+          <h3>احصل على نتيجتك</h3>
+<p>هتعرف المجال الأقرب ليك وليه هو مناسب لك.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <div class="container quiz-grid">
+        <div class="section-copy reveal">
+          <span class="eyebrow">Interactive Quiz</span>
+         <h3>ابدأ التنفيذ</h3>
+<p>خد خطوة فعلية: ادخل Dashboard أو كمل تحليل أعمق.</p>
+        <div class="simple-benefits">
+  <div>
+    <strong>60 ثانية</strong>
+    <span>وقت بسيط</span>
+  </div>
+  <div>
+    <strong>تحليل ذكي</strong>
+    <span>مش عشوائي</span>
+  </div>
+  <div>
+    <strong>نتيجة قابلة للتنفيذ</strong>
+    <span>مش مجرد كلام</span>
+  </div>
+</div>
+
+          <div class="next-note">
+  <strong>بعد ما تخلص:</strong>
+  <span>هيكون عندك اتجاه واضح + الخطوة الجاية مباشرة.</span>
+</div>
+        </div>
+
+        <div class="quiz-card reveal">
+          <div class="quiz-meta">
+            <span class="quiz-stage" id="quizStage">سؤال 1 من 3</span>
+            <span class="quiz-time">60 ثانية</span>
+          </div>
+          <div class="quiz-progress">
+            <span id="quizProgress"></span>
+          </div>
+          <h3 id="quizQuestion">تفضل العمل مع:</h3>
+          <p class="quiz-feedback" id="quizFeedback">كل اختيار هنا يقربنا لصورتك الحقيقية.</p>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-result hidden" id="quizResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-step-section" id="next-step">
+      <div class="container next-step-grid">
+        <div class="section-copy reveal">
+          <span class="eyebrow">What Happens Next</span>
+<h2>النتيجة مش النهاية… دي البداية</h2>
+<p>
+بعد ما تعرف مجالك، هتبدأ الرحلة الحقيقية — بناء مهاراتك والدخول لسوق العمل بخطوات مدروسة.
+</p>
+          <div class="next-actions">
+            <a class="btn btn-primary" href="student-auth.html">ابدأ رحلتك الآن</a>
+            <!-- <a class="btn btn-ghost" href="student-dashboard.html">شاهد الـ Dashboard</a> -->
+          </div>
+        </div>
+
+        <div class="next-step-card reveal">
+          <strong>المسار الأبسط للمستخدم</strong>
+         <ul class="next-step-list">
+  <li>تحليل شخصيتك ومهاراتك</li>
+  <li>تحديد المسار الأنسب</li>
+  <li>البدء في تنفيذ خطة واضحة</li>
+</ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="result-overlay hidden" id="resultOverlay" aria-hidden="true">
+    <div class="result-backdrop" id="resultBackdrop"></div>
+    <div class="result-fullscreen" id="resultFullscreen">
+      <button class="result-close" id="resultClose" type="button" aria-label="إغلاق">×</button>
+      <div class="result-hero">
+        <span class="eyebrow">Your Talent Reveal</span>
+        <p class="result-kicker">نتيجتك</p>
+<h2 id="resultTitle">مجالك الأقرب: Data Analysis بنسبة 82%</h2>
+<p class="result-ai-copy">
+بناءً على اختياراتك، أنت تميل للتفكير التحليلي واتخاذ قرارات مبنية على بيانات. ده بيخليك مناسب لمجالات زي تحليل البيانات وحل المشكلات.
+</p>
+</div>
+
+      <div class="result-summary-grid">
+        <article class="result-panel-card">
+          <strong>نقاط قوتك</strong>
+          <ul id="resultStrengths" class="result-list"></ul>
+        </article>
+        <article class="result-panel-card">
+          <strong>المجالات المناسبة</strong>
+          <ul id="resultPaths" class="result-list"></ul>
+        </article>
+        <article class="result-panel-card">
+          <strong>أول خطوة ليك</strong>
+<p id="resultNextStep">
+ابدأ بتعلم أساسيات تحليل البيانات، ثم طبق على مشاريع بسيطة — ده هيكون أول طريقك الحقيقي.
+</p>
+        </article>
+      </div>
+
+      <div class="insight-grid">
+        <article class="insight-card">
+          <strong>Talent DNA</strong>
+          <div class="dna-bars" id="dnaBars"></div>
+        </article>
+        <article class="insight-card">
+          <strong>لماذا هذه النتيجة؟</strong>
+          <ul class="result-list" id="resultHooks"></ul>
+        </article>
+      </div>
+
+      <div class="unlock-strip">
+      <strong id="resultProgressText">
+أنت بدأت أول خطوة في رحلتك المهنية
+</strong>
+<span>
+كمل دلوقتي وابدأ في بناء مستقبلك خطوة بخطوة.
+</span> 
+      </div>
+
+      <div class="result-actions">
+        <a class="btn btn-primary btn-large" href="student-auth.html">ابدأ رحلتك الآن</a>
+        <a class="btn btn-ghost btn-large" href="student-dashboard.html">شاهد الـ Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div>
+        <strong>SkillBridge</strong>
+<p>
+SkillBridge مش مجرد اختبار… دي نقطة البداية لمستقبلك.
+</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#quiz">التحليل</a>
+        <a href="student-auth.html">ابدأ الآن</a>
+        <a href="company-auth.html">للشركات</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

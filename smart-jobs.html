@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Smart Jobs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="smart-jobs.css">
+</head>
+<body>
+  <header class="jobs-topbar" id="jobsTopbar">
+    <div class="topbar-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Smart Jobs</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="talent-dna.html">Profile</a>
+        <a href="learning-path.html">Learning</a>
+        <a class="active" href="smart-jobs.html">Smart Jobs</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="ghost-btn compact-btn" type="button" id="changeModeBtn">تغيير الوضع</button>
+        <a class="primary-link" href="student-dashboard.html" id="dashboardLink">Back to Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="jobs-page">
+    <section class="welcome-flow" id="welcomeFlow">
+      <section class="role-gate hidden" id="roleGate">
+        <article class="gate-card student-card-gate reveal">
+          <span class="gate-label">Student Mode</span>
+          <h2>أنا طالب</h2>
+          <p>ادخل على فرص مناسبة لك مع Match Analysis وتقديم سريع وخطوات تطوير واضحة.</p>
+          <ul class="gate-points">
+            <li>وظائف مناسبة لنتيجتك</li>
+            <li>تحليل واضح للتوافق</li>
+            <li>تقديم سريع من نفس الصفحة</li>
+          </ul>
+          <button class="gate-btn" type="button" data-role-select="student">اختيار الطالب</button>
+        </article>
+
+        <article class="gate-card company-card-gate reveal">
+          <span class="gate-label">Company Mode</span>
+          <h2>أنا شركة</h2>
+          <p>اعرض أفضل المرشحين بسرعة مع Talent DNA واضح وقرارات أسهل من الـ CV التقليدي.</p>
+          <ul class="gate-points">
+            <li>مرشحين جاهزين</li>
+            <li>فلترة أسرع وأوضح</li>
+            <li>دعوة مقابلة مباشرة</li>
+          </ul>
+          <button class="gate-btn" type="button" data-role-select="company">اختيار الشركة</button>
+        </article>
+      </section>
+
+      <section class="auth-stage hidden" id="authStage">
+        <div class="auth-shell reveal">
+          <div class="auth-intro">
+            <span class="eyebrow" id="authEyebrow">Student Login</span>
+            <h1 id="authTitle">سجّل دخولك كطالب</h1>
+            <p id="authCopy">ادخل الإيميل وكلمة المرور الخاصة بك ثم انتقل مباشرة إلى الـ Smart Jobs المناسبة لك.</p>
+            <div class="auth-benefits" id="authBenefits">
+              <span>Smart Match</span>
+              <span>Quick Access</span>
+              <span>Saved Progress</span>
+            </div>
+          </div>
+
+          <form class="auth-card" id="roleLoginForm">
+            <div class="field">
+              <label for="roleEmail" id="emailLabel">Email</label>
+              <input id="roleEmail" type="email" placeholder="student@email.com">
+            </div>
+
+            <div class="field">
+              <label for="rolePassword">Password</label>
+              <input id="rolePassword" type="password" placeholder="••••••••">
+            </div>
+
+            <div class="auth-actions">
+              <button class="ghost-btn" type="button" id="backToRolesBtn">رجوع</button>
+              <button class="primary-btn" type="submit" id="loginSubmitBtn">دخول</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <section class="jobs-shell" id="jobsShell">
+      <div class="jobs-hero reveal">
+        <div>
+          <span class="eyebrow" id="heroEyebrow">Student Smart Jobs</span>
+          <h1 id="heroTitle">وظائف ذكية مناسبة لك فعلًا</h1>
+          <p id="heroCopy">نقارن بين شخصيتك، مهاراتك، واحتياجات الوظيفة عشان نعرض فرص أقرب لك من أي قائمة عادية.</p>
+        </div>
+        <div class="insight-box">
+          <strong>Smart Insight</strong>
+          <p id="insightCopy">فرصك زادت 20% بعد ما كملت البروفايل.</p>
+        </div>
+      </div>
+
+      <section class="jobs-guide reveal">
+        <article class="guide-step is-done">
+          <span>1</span>
+          <strong>شوف الفرص</strong>
+          <p>ابدأ بأقرب وظيفة أو شركة مناسبة لمسارك.</p>
+        </article>
+        <article class="guide-step is-active">
+          <span>2</span>
+          <strong>قوّي الـ Match</strong>
+          <p>لو في gap واضحة، كمّل المهارة المقترحة أولًا.</p>
+        </article>
+        <article class="guide-step">
+          <span>3</span>
+          <strong>قدّم بسرعة</strong>
+          <p>قدّم من نفس الصفحة وكمّل المتابعة من الداشبورد.</p>
+        </article>
+      </section>
+
+      <section class="student-view" id="studentView">
+        <div class="jobs-layout">
+          <aside class="jobs-side reveal">
+            <div class="side-card top-match">
+              <span class="eyebrow">Top Match Job</span>
+              <h3 id="topJobTitle">Junior Data Analyst</h3>
+              <p id="topJobCompany">TechNova</p>
+              <div class="match-pill" id="topJobMatch">82% Match</div>
+              <p id="topJobReason">علشان عندك Analytical Skills قوية</p>
+              <div class="top-actions">
+                <button class="primary-btn" type="button" data-apply-job="job-1">Apply Now</button>
+                <button class="ghost-btn" type="button" data-open-job="job-1">View Details</button>
+              </div>
+            </div>
+
+            <div class="side-card">
+              <span class="eyebrow">AI Coach</span>
+              <p>أنصحك تقدم على الوظائف التي فيها SQL وDashboards أولًا، لأن فرصتك فيها أعلى الآن.</p>
+            </div>
+          </aside>
+
+          <section class="jobs-main">
+            <div class="section-head reveal">
+              <h2>Recommended Jobs</h2>
+              <div class="filters-row">
+                <button class="filter-chip active" type="button" data-job-filter="all">All</button>
+                <button class="filter-chip" type="button" data-job-filter="remote">Remote</button>
+                <button class="filter-chip" type="button" data-job-filter="internship">Internship</button>
+                <button class="filter-chip" type="button" data-job-filter="data">Data</button>
+              </div>
+            </div>
+            <div class="student-quick-links reveal">
+              <a class="ghost-btn" href="applied-jobs.html?tab=applied">Applied Jobs</a>
+              <a class="ghost-btn" href="applied-jobs.html?tab=saved">Saved Jobs</a>
+            </div>
+            <div class="job-grid" id="jobGrid"></div>
+            <div class="section-head reveal company-preview-head">
+              <h2>شركات مناسبة لمسارك</h2>
+              <p class="section-copy">دي الشركات اللي نوع أدوارها قريب من مهاراتك الحالية، عشان تشوف السوق قدامك بشكل واضح.</p>
+            </div>
+            <div class="company-preview-grid" id="companyPreviewGrid"></div>
+
+            <div class="section-head reveal learning-head">
+              <h2>نوصي بتطوير هذه المهارات</h2>
+              <p class="section-copy">كل خطوة تطوير هنا مرتبطة مباشرة برفع فرص قبولك في الوظائف الأنسب لك.</p>
+            </div>
+            <div class="learning-recommendations" id="learningRecommendations"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="company-view hidden" id="companyView">
+        <div class="jobs-layout company-layout">
+          <aside class="jobs-side reveal">
+            <div class="side-card top-match company-top">
+              <span class="eyebrow">Recommended Candidates</span>
+              <h3>أفضل مرشحين ليك الآن</h3>
+              <p>80% من المرشحين المناسبين لك موجودين في مسار Data، والجاهزية الأعلى حاليًا عند أصحاب المشاريع المعتمدة.</p>
+              <div class="top-actions">
+                <button class="primary-btn" type="button" data-filter-candidates="data">Smart Filter</button>
+                <button class="ghost-btn" type="button">Hiring Insights</button>
+              </div>
+            </div>
+          </aside>
+
+          <section class="jobs-main">
+            <div class="section-head reveal">
+              <h2>Jobs With Recommended Candidates</h2>
+              <div class="filters-row">
+                <span class="filter-chip active">Data</span>
+                <span class="filter-chip">High Match</span>
+                <span class="filter-chip">Projects</span>
+                <span class="filter-chip">Quick Invite</span>
+              </div>
+            </div>
+            <div class="company-jobs-list" id="companyJobsList"></div>
+            <div class="section-head reveal candidate-head">
+              <h2>Top Candidates</h2>
+              <p class="section-copy">أفضل المرشحين إجمالًا حسب التوافق والجاهزية.</p>
+            </div>
+            <div class="candidate-grid" id="candidateGrid"></div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <section class="details-modal hidden" id="detailsModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <div id="modalContent"></div>
+    </div>
+  </section>
+
+  <section class="apply-modal hidden" id="applyModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-apply></div>
+    <div class="modal-card apply-card">
+      <button class="modal-close" type="button" data-close-apply>×</button>
+      <div class="apply-head">
+        <span class="eyebrow">One-Click Apply</span>
+        <h2>قدّم على الوظيفة</h2>
+      </div>
+      <form class="apply-form" id="applyForm">
+        <div class="field">
+          <label for="applyName">الاسم</label>
+          <input id="applyName" type="text" value=" Gamal Ellithy">
+        </div>
+        <div class="field">
+          <label for="applyEmail">الإيميل</label>
+          <input id="applyEmail" type="email" value="gamal@email.com">
+        </div>
+        <div class="field">
+          <label for="applyCv">CV / Portfolio</label>
+          <input id="applyCv" type="text" placeholder="Portfolio or CV link">
+        </div>
+        <div class="field">
+          <label for="applyMessage">Cover Letter</label>
+          <textarea id="applyMessage" placeholder="اكتب رسالة قصيرة للشركة"></textarea>
+        </div>
+        <button class="primary-btn" type="submit" id="submitApplicationBtn">Submit Application</button>
+      </form>
+      <div class="apply-success hidden" id="applySuccess">
+        <h3>تم التقديم بنجاح 🎉</h3>
+        <p>تم حفظ الوظيفة داخل Jobs Library، ويمكنك متابعة حالتها من تبويب Applied.</p>
+        <div class="card-actions">
+          <a class="primary-btn" href="applied-jobs.html?tab=applied">اذهب إلى Jobs Library</a>
+          <a class="ghost-btn" href="student-dashboard.html">العودة للـ Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="jobsToast"></div>
+
+  <script src="smart-jobs.js"></script>
+</body>
+</html>

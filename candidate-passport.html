@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Candidate Passport</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="candidate-passport.css">
+</head>
+<body>
+  <header class="passport-topbar" id="passportTopbar">
+    <div class="topbar-shell">
+      <a class="passport-brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Candidate Passport</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle type="button" aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="talent-dna.html">Profile</a>
+        <a href="learning-path.html">Learning</a>
+        <a href="smart-jobs.html">Jobs</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="ghost-link" type="button" id="shareProfileBtn">Share Hub</button>
+        <button class="primary-link" type="button" id="downloadPassportBtn">Preview PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="passport-page">
+    <section class="hero-grid">
+      <article class="hero-card reveal">
+        <div class="hero-head">
+          <div class="hero-avatar" id="passportAvatar">GA</div>
+          <div class="hero-copy">
+            <span class="eyebrow">Smart Talent Card</span>
+            <h1 id="heroGreeting">Gamal, You’re 78% Job Ready 🔥</h1>
+            <p class="hero-role" id="heroRole">Aspiring Data Analyst</p>
+            <p class="hero-location" id="heroLocation">Cairo, Egypt</p>
+          </div>
+        </div>
+
+        <div class="summary-box">
+          <strong>Talent Summary</strong>
+          <p id="talentSummary">محلل بيانات مبتدئ يمتلك مهارات قوية في التفكير التحليلي وPython، ويبحث عن فرصة تدريب لتطوير مهاراته العملية.</p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="primary-link action-btn" href="smart-jobs.html">Apply to Jobs</a>
+          <a class="ghost-link action-btn" href="student-dashboard.html">Back to Dashboard</a>
+          <button class="ghost-link action-btn" type="button" id="heroShareBtn">Share Passport</button>
+        </div>
+      </article>
+
+      <aside class="readiness-card reveal">
+        <div class="readiness-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+            <circle class="ring-value" id="readinessRing" cx="60" cy="60" r="48"></circle>
+          </svg>
+          <div class="ring-copy">
+            <strong id="jobReadyPercent">78%</strong>
+            <span>Job Ready</span>
+          </div>
+        </div>
+
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <strong id="talentScore">82 / 100</strong>
+            <span>Talent Score</span>
+          </div>
+          <div class="mini-stat">
+            <strong id="xpValue">1240 XP</strong>
+            <span>Experience</span>
+          </div>
+          <div class="mini-stat">
+            <strong id="levelValue">Explorer</strong>
+            <span>Current Level</span>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <strong>Smart Insight</strong>
+          <p id="smartInsight">الشركات بتدور على مهارة SQL في 60% من الوظائف المشابهة لك.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats-strip reveal">
+      <article class="stat-chip">
+        <strong id="savedJobsCount">0</strong>
+        <span>Saved Jobs</span>
+      </article>
+      <article class="stat-chip">
+        <strong id="applicationsCount">0</strong>
+        <span>Applications</span>
+      </article>
+      <article class="stat-chip">
+        <strong id="projectsCount">0</strong>
+        <span>Selected Projects</span>
+      </article>
+      <article class="stat-chip">
+        <strong id="communityCount">500+</strong>
+        <span>Students In Your Path</span>
+      </article>
+    </section>
+
+    <section class="passport-layout">
+      <section class="main-column">
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Talent DNA Snapshot</span>
+              <h2>افهمه في 10 ثواني</h2>
+            </div>
+            <span class="panel-pill">Live Update</span>
+          </div>
+          <div class="dna-grid" id="dnaBars"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Best Projects</span>
+              <h2>أقوى شغل يثبت المستوى</h2>
+            </div>
+          </div>
+          <div class="projects-grid" id="bestProjects"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Match Ready</span>
+              <h2>جاهز للتقديم على الوظائف دي</h2>
+            </div>
+            <a class="ghost-link tiny-link" href="smart-jobs.html">View Jobs</a>
+          </div>
+          <div class="match-grid" id="matchReadyJobs"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Growth Timeline</span>
+              <h2>رحلتك بتتبني تلقائيًا</h2>
+            </div>
+          </div>
+          <div class="timeline-list" id="growthTimeline"></div>
+        </article>
+      </section>
+
+      <aside class="side-column">
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Top Skills</span>
+              <h2>مهاراتك الأقوى</h2>
+            </div>
+          </div>
+          <div class="skills-cloud" id="topSkills"></div>
+          <div class="badge-list" id="badgeList"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Progress & Growth</span>
+              <h2>أنت ماشي فين دلوقتي</h2>
+            </div>
+          </div>
+          <div class="progress-block">
+            <div class="progress-labels">
+              <strong>Career Progress</strong>
+              <span id="careerProgressLabel">78%</span>
+            </div>
+            <div class="progress-bar">
+              <span id="careerProgressBar"></span>
+            </div>
+          </div>
+          <div class="goal-card">
+            <strong>Next Goal</strong>
+            <p id="nextGoalText">تعلم SQL لزيادة فرصك 20%</p>
+          </div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Strength vs Gap</span>
+              <h2>القوة وما ينقصك</h2>
+            </div>
+          </div>
+          <div class="duo-list">
+            <div>
+              <strong>Strengths</strong>
+              <div class="stack-list" id="strengthList"></div>
+            </div>
+            <div>
+              <strong>Skill Gaps</strong>
+              <div class="stack-list stack-list-gaps" id="gapList"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-card reveal recruiter-mode" id="recruiterPanel">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Recruiter View</span>
+              <h2>قرار التوظيف السريع</h2>
+            </div>
+          </div>
+          <p id="recruiterCopy">المرشح مناسب للمقابلة المبدئية ويظهر توافقًا واضحًا مع أدوار Data Intern.</p>
+          <div class="hero-actions">
+            <button class="primary-link action-btn" type="button" id="inviteInterviewBtn">Invite to Interview</button>
+            <button class="ghost-link action-btn" type="button" id="contactCandidateBtn">Contact Candidate</button>
+          </div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Download & Share</span>
+              <h2>جاهز للمشاركة</h2>
+            </div>
+          </div>
+          <div class="share-grid">
+            <button class="share-action" type="button" id="downloadCvBtn">📄 Preview PDF</button>
+            <button class="share-action" type="button" id="copyProfileBtn">🔗 Copy Link</button>
+            <button class="share-action" type="button" id="whatsAppShareBtn">🟢 WhatsApp</button>
+            <button class="share-action" type="button" id="emailShareBtn">✉️ Email</button>
+            <button class="share-action" type="button" id="qrPreviewBtn">📱 Show QR</button>
+            <div class="qr-card">
+              <div class="qr-box" id="qrBox"></div>
+              <span id="qrLabel">QR Code</span>
+            </div>
+          </div>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <section class="share-modal hidden" id="passportShareModal" aria-hidden="true">
+    <div class="share-backdrop" data-close-share></div>
+    <div class="share-modal-card">
+      <button class="share-close" type="button" data-close-share>×</button>
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">One-Click Share</span>
+          <h2>Candidate Passport Share Hub</h2>
+        </div>
+      </div>
+      <div class="share-hub-grid">
+        <button class="share-action" type="button" id="hubWhatsAppBtn">WhatsApp</button>
+        <button class="share-action" type="button" id="hubEmailBtn">Email</button>
+        <button class="share-action" type="button" id="hubCopyBtn">Copy Link</button>
+        <button class="share-action" type="button" id="hubPreviewPdfBtn">Preview PDF</button>
+      </div>
+      <div class="share-preview-card">
+        <strong>Dynamic QR</strong>
+        <div class="qr-box qr-box-large" id="qrPreviewBox"></div>
+        <span id="shareHubMeta">Updated with your latest skills and badges.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="share-modal hidden" id="passportPdfModal" aria-hidden="true">
+    <div class="share-backdrop" data-close-pdf></div>
+    <div class="share-modal-card pdf-modal-card">
+      <button class="share-close" type="button" data-close-pdf>×</button>
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">PDF Preview</span>
+          <h2>Talent Passport Preview</h2>
+        </div>
+      </div>
+      <div class="pdf-preview" id="passportPdfPreview"></div>
+      <div class="hero-actions">
+        <button class="primary-link action-btn" type="button" id="confirmPrintBtn">Download PDF</button>
+        <button class="ghost-link action-btn" type="button" data-close-pdf>Close</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="passportToast"></div>
+
+  <script src="candidate-passport.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Company Login & Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="company-auth.css">
+</head>
+<body>
+  <header class="auth-topbar" id="companyAuthTopbar">
+    <div class="topbar-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Company Access</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a href="index.html">Home</a>
+        <a href="student-auth.html">Students</a>
+        <a class="active" href="company-auth.html">Companies</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="ghost-link" href="student-auth.html">Student Access</a>
+        <a class="primary-link" href="company-dashboard.html">Demo Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-shell">
+      <aside class="auth-visual reveal">
+        <div class="visual-badge">Companies</div>
+        <h1>اعثر على أفضل المواهب بسرعة وذكاء</h1>
+        <p>منصة توظيف لا تعرض CV فقط، بل تعطيك Talent DNA، مؤشرات جاهزية، وفرزًا أذكى للطلاب المناسبين فعلًا.</p>
+
+        <div class="benefit-list">
+          <article>
+            <strong>Hire Faster</strong>
+            <span>قلّل وقت المقابلات وفرز المرشحين</span>
+          </article>
+          <article>
+            <strong>Talent DNA</strong>
+            <span>افهم الشخصية، المشاريع، والاستعداد بسرعة</span>
+          </article>
+          <article>
+            <strong>Smarter Matching</strong>
+            <span>اعثر على المرشح الأنسب بدل الأوسع انتشارًا</span>
+          </article>
+        </div>
+
+        <div class="metric-grid">
+          <div><strong>60%</strong><span>تقليل وقت التوظيف</span></div>
+          <div><strong>80%</strong><span>دقة اختيار أعلى</span></div>
+          <div><strong>Talent Score</strong><span>بدل CV فقط</span></div>
+        </div>
+      </aside>
+
+      <section class="auth-card reveal" data-company-auth>
+        <div class="card-head">
+          <span class="section-pill">Smart Hiring Experience</span>
+          <h2>دخول أو إنشاء حساب شركة</h2>
+          <p>ابنِ حساب الشركة، ثم ابدأ البحث عن المواهب مباشرة داخل Talent Pool.</p>
+        </div>
+
+        <div class="auth-switch">
+          <button class="switch-btn active" type="button" data-auth-view="login">Login</button>
+          <button class="switch-btn" type="button" data-auth-view="signup">Sign Up</button>
+        </div>
+
+        <div class="auth-view active" data-auth-panel="login">
+          <form class="auth-form" novalidate>
+            <div class="field">
+              <label for="companyLoginEmail">البريد الإلكتروني أو اسم الشركة</label>
+              <input id="companyLoginEmail" type="text" placeholder="company@email.com">
+            </div>
+
+            <div class="field">
+              <label for="companyLoginPassword">كلمة المرور</label>
+              <div class="password-field">
+                <input id="companyLoginPassword" type="password" placeholder="••••••••">
+                <button class="toggle-pass" type="button" data-toggle-password="#companyLoginPassword">إظهار</button>
+              </div>
+            </div>
+
+            <div class="row-inline">
+              <label class="remember"><input type="checkbox"> تذكرني</label>
+              <a href="#">نسيت كلمة المرور؟</a>
+            </div>
+
+            <button class="submit-btn" type="button" data-toast="تم تسجيل دخول الشركة تجريبيًا">تسجيل الدخول</button>
+
+            <div class="divider"><span>أو</span></div>
+
+            <div class="social-row">
+              <button class="social-btn" type="button">Continue with Google Business</button>
+              <button class="social-btn linkedin" type="button">Continue with LinkedIn</button>
+            </div>
+
+            <p class="auth-note">ليس لديك حساب للشركة؟ <button class="text-btn" type="button" data-auth-view="signup">أنشئ حسابك الآن</button></p>
+          </form>
+        </div>
+
+        <div class="auth-view" data-auth-panel="signup">
+          <div class="signup-progress">
+            <div class="progress-head">
+              <strong>Company Setup Progress</strong>
+              <span data-progress-label>Step 1 / 4</span>
+            </div>
+            <div class="progress-track"><span data-progress-bar style="width:25%"></span></div>
+            <p data-progress-copy>ابدأ من هوية الشركة ثم نصل إلى المرشح المثالي.</p>
+          </div>
+
+          <form class="signup-form" novalidate>
+            <section class="signup-step active" data-step="1">
+              <div class="step-head">
+                <h3>المعلومات الأساسية</h3>
+                <span class="mini-pill">Step 1</span>
+              </div>
+              <div class="grid two">
+                <div class="field">
+                  <label for="companyName">اسم الشركة بالكامل</label>
+                  <input id="companyName" type="text" placeholder="TechNova">
+                </div>
+                <div class="field">
+                  <label for="companyEmail">البريد الإلكتروني</label>
+                  <input id="companyEmail" type="email" placeholder="team@company.com">
+                </div>
+                <div class="field">
+                  <label for="companyPassword">كلمة المرور</label>
+                  <div class="password-field">
+                    <input id="companyPassword" type="password" placeholder="8 أحرف على الأقل">
+                    <button class="toggle-pass" type="button" data-toggle-password="#companyPassword">إظهار</button>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="companyPhone">رقم الهاتف / التواصل الأساسي</label>
+                  <input id="companyPhone" type="text" placeholder="+20 ...">
+                </div>
+              </div>
+            </section>
+
+            <section class="signup-step" data-step="2">
+              <div class="step-head">
+                <h3>معلومات الشركة والصناعة</h3>
+                <span class="mini-pill">Step 2</span>
+              </div>
+              <div class="grid two">
+                <div class="field">
+                  <label  for="companyIndustry">نوع الشركة / الصناعة</label>
+                  <select id="companyIndustry">
+                    <option class="companyIndustry_new" value="">اختر الصناعة</option>
+                    <option class="companyIndustry_new">Technology</option>
+                    <option class="companyIndustry_new">Finance</option>
+                    <option class="companyIndustry_new">Education</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="companySize">حجم الشركة</label>
+                  <select id="companySize">
+                    <option class="companyIndustry_new" value="">اختر الحجم</option>
+                    <option class="companyIndustry_new">Small</option>
+                    <option class="companyIndustry_new">Medium</option>
+                    <option class="companyIndustry_new"> Large</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="companyLocation">الموقع</label>
+                  <select  id="companyLocation">
+                    <option class="companyIndustry_new" value="">اختر الموقع</option>
+                    <option class="companyIndustry_new">Remote</option>
+                    <option class="companyIndustry_new">Cairo</option>
+                    <option class="companyIndustry_new">Alexandria</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="companyOpportunity">نوع الفرص</label>
+                  <select id="companyOpportunity">
+                    <option value="">اختر الفرص</option>
+                    <option class="companyIndustry_new">Internship</option>
+                    <option class="companyIndustry_new">Full-time</option>
+                    <option class="companyIndustry_new">Part-time</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+
+            <section class="signup-step" data-step="3">
+              <div class="step-head">
+                <h3>إعداد بروفايل الشركة</h3>
+                <span class="mini-pill">Step 3</span>
+              </div>
+              <div class="grid two">
+                <div class="field">
+                  <label for="companyLogo">شعار الشركة</label>
+                  <input id="companyLogo" type="text" placeholder="رابط الشعار أو اسم الملف">
+                </div>
+                <div class="field">
+                  <label for="companyContactPreference">تفضيلات التواصل</label>
+                  <select id="companyContactPreference">
+                    <option value="">اختر التفضيل</option>
+                    <option class="companyIndustry_new">Email</option>
+                    <option class="companyIndustry_new">Platform Message</option>
+                  </select>
+                </div>
+                <div class="field wide">
+                  <label for="companyAbout">وصف قصير للشركة</label>
+                  <textarea id="companyAbout" placeholder="Mission, vision, culture, hiring tone"></textarea>
+                </div>
+              </div>
+            </section>
+
+            <section class="signup-step" data-step="4">
+              <div class="step-head">
+                <h3>المرشح المثالي</h3>
+                <span class="mini-pill">Step 4</span>
+              </div>
+              <div class="grid two">
+                <div class="field">
+                  <label for="idealEducation">المستوى التعليمي المطلوب</label>
+                  <select id="idealEducation">
+                    <option value="">اختر المستوى</option>
+                    <option class="companyIndustry_new">High School</option>
+                    <option class="companyIndustry_new">Bachelor</option>
+                    <option class="companyIndustry_new">Master</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="idealTrack">التخصصات المستهدفة</label>
+                  <input id="idealTrack" type="text" placeholder="Data, Software, Design">
+                </div>
+                <div class="field wide">
+                  <label for="idealSkills">المهارات المطلوبة</label>
+                  <textarea id="idealSkills" placeholder="SQL, Python, Communication, Ownership"></textarea>
+                </div>
+              </div>
+            </section>
+
+            <div class="wizard-actions">
+              <button class="ghost-btn" type="button" data-prev-step>Previous</button>
+              <div class="wizard-actions-end">
+                <button class="ghost-btn" type="button" data-next-step>Next</button>
+                <a class="submit-btn hidden" href="company-setup.html" data-finish-step>أنشئ حساب شركتك وابدأ البحث عن المواهب</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast" id="companyAuthToast"></div>
+
+  <script src="company-auth.js"></script>
+</body>
+</html>

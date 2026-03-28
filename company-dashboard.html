@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Company Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="company-dashboard.css">
+</head>
+<body>
+  <header class="company-topbar" id="companyTopbar">
+    <div class="topbar-shell">
+      <a class="brand" href="company-dashboard.html">
+        <span class="brand-mark">TN</span>
+        <span class="brand-copy">
+          <strong>TechNova</strong>
+          <small>Company Talent Hub</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+      <nav class="topbar-links">
+        <a class="active" href="company-dashboard.html">Dashboard</a>
+        <a href="#students">Students</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#reports">Reports</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="primary-btn" href="post-job.html">Add Job</a>
+
+        <button class="icon-btn has-badge" id="companyNotificationsTrigger" type="button" data-dropdown-trigger="notificationsDropdown" data-badge="0" aria-label="الإشعارات">🔔</button>
+        <div class="dropdown-panel" id="notificationsDropdown">
+          <strong>Notifications</strong>
+          <div class="dropdown-notifications" id="companyNotificationsList"></div>
+        </div>
+
+        <button class="icon-btn" type="button" data-dropdown-trigger="settingsDropdown" aria-label="الإعدادات">⚙</button>
+        <div class="dropdown-panel" id="settingsDropdown">
+          <strong>Profile Settings</strong>
+          <a href="#">Account Settings</a>
+          <a href="#">Company Profile</a>
+          <a href="#">Privacy</a>
+          <a href="#">Export Preferences</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <div class="dashboard-shell">
+      <aside class="sidebar reveal">
+        <div class="company-info">
+          <div class="company-avatar">TN</div>
+          <div>
+            <h2>TechNova</h2>
+            <p>شركة متخصصة في التحليل والبرمجة</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="active" href="company-dashboard.html">🏠 Overview</a>
+          <a href="#students">👤 Students View</a>
+          <a href="#jobs">💼 Jobs</a>
+          <a href="#reports">📈 Reports</a>
+          <a href="#settingsDropdown">⚙ Settings</a>
+        </nav>
+      </aside>
+
+      <section class="main-content">
+        <section class="kpi-strip reveal" id="companyKpiStrip">
+          <article class="kpi-card">
+            <small>Total Applicants</small>
+            <strong id="kpiApplicants">0</strong>
+          </article>
+          <article class="kpi-card">
+            <small>Average Match</small>
+            <strong id="kpiAverageMatch">0%</strong>
+          </article>
+          <article class="kpi-card">
+            <small>Top Skill</small>
+            <strong id="kpiTopSkill">--</strong>
+          </article>
+          <article class="kpi-card">
+            <small>Hiring Health</small>
+            <strong id="kpiHiringHealth">Balanced</strong>
+          </article>
+        </section>
+
+        <section class="hiring-flow reveal">
+          <article class="hiring-step is-done">
+            <span>1</span>
+            <strong>Post Job</strong>
+            <p>حددت الوظائف المفتوحة واحتياجات كل دور.</p>
+          </article>
+          <article class="hiring-step is-active">
+            <span>2</span>
+            <strong>Review Matches</strong>
+            <p>دلوقتي راجع أعلى المرشحين حسب الـ match والجاهزية.</p>
+          </article>
+          <article class="hiring-step">
+            <span>3</span>
+            <strong>Invite & Hire</strong>
+            <p>اختصر قرارك وابدأ المقابلات أو أرسل العرض.</p>
+          </article>
+        </section>
+
+        <section class="stats-grid reveal">
+          <article class="stat-card stagger-item">
+            <small>Active Jobs</small>
+            <strong>12</strong>
+            <p>عدد الوظائف المفتوحة الآن</p>
+          </article>
+          <article class="stat-card stagger-item">
+            <small>Applicants</small>
+            <strong>184</strong>
+            <p>عدد الطلاب المتقدمين هذا الأسبوع</p>
+          </article>
+          <article class="stat-card stagger-item">
+            <small>Top Talent</small>
+            <strong>91%</strong>
+            <p>أفضل مستوى استعداد بين المرشحين</p>
+          </article>
+          <article class="stat-card stagger-item">
+            <small>Average Score</small>
+            <strong>76%</strong>
+            <p>متوسط أداء الطلاب الحالي</p>
+          </article>
+        </section>
+
+        <section class="panel-card reveal" id="students">
+          <div class="card-head">
+            <div>
+              <h3>Students View</h3>
+              <p>ابحث وفلتر ورتب الطلاب بسرعة</p>
+            </div>
+            <span class="mini-badge">Talent Ranking</span>
+          </div>
+
+          <div class="filters-row">
+            <select class="filter-input" id="trackFilter">
+              <option class="option_bg"  value="all">Filter by Track</option>
+              <option class="option_bg"   value="data">Data</option>
+              <option class="option_bg"  value="software">Software</option>
+              <option class="option_bg"  value="design">Design</option>
+            </select>
+            <select class="filter-input" id="sortFilter">
+              <option class="option_bg"  value="default">Sort by</option>
+              <option class="option_bg"  value="score">Score</option>
+              <option class="option_bg"  value="xp">XP</option>
+              <option class="option_bg"  value="projects">Projects</option>
+            </select>
+            <input class="filter-input" id="studentSearch" type="text" placeholder="Search by Name / Email">
+          </div>
+
+          <div class="view-switch">
+            <button class="outline-btn active" type="button" data-view="grid">Grid View</button>
+            <button class="outline-btn" type="button" data-view="list">List View</button>
+          </div>
+
+          <div class="students-grid" id="studentsGrid">
+            <article class="student-card stagger-item" data-student="gamal" data-track="data" data-name="Gamal Ellithy" data-email="gamal@email.com" data-xp="620" data-projects="3" data-score="82">
+              <div class="student-head">
+                <div class="student-avatar">GL</div>
+                <div>
+                  <strong>Gamal Ellithy</strong>
+                  <p>Data Analysis</p>
+                </div>
+              </div>
+              <div class="student-meta">
+                <span>⭐ XP 620</span>
+                <span>Level 2</span>
+                <span>📁 3 Projects</span>
+              </div>
+              <div class="status-row">
+                <span class="status available">💡 Looking for Job</span>
+                <div class="student-actions">
+                  <button class="outline-btn" type="button" data-open-modal="gamalModal">Quick View</button>
+                  <button class="outline-btn tag-btn" type="button">Top Candidate</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="student-card stagger-item" data-student="sara" data-track="data" data-name=" Abdulrahman Al-Qist" data-email="sara@email.com" data-xp="810" data-projects="5" data-score="91">
+              <div class="student-head">
+                <div class="student-avatar">SA</div>
+                <div>
+                  <strong>Abdulrahman Al-Qist</strong>
+                  <p>Data Analysis</p>
+                </div>
+              </div>
+              <div class="student-meta">
+                <span>⭐ XP 810</span>
+                <span>Level 3</span>
+                <span>📁 5 Projects</span>
+              </div>
+              <div class="status-row">
+                <span class="status employed">✅ Employed</span>
+                <div class="student-actions">
+                  <button class="outline-btn" type="button" data-open-modal="saraModal">Quick View</button>
+                  <button class="outline-btn tag-btn" type="button">Interviewed</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="student-card stagger-item" data-student="mohamed" data-track="software" data-name=" Amr Abbas" data-email="Amr Abbas@email.com" data-xp="540" data-projects="4" data-score="76">
+              <div class="student-head">
+                <div class="student-avatar">MA</div>
+                <div>
+                  <strong> Amr Abbas</strong>
+                  <p>Software Engineering</p>
+                </div>
+              </div>
+              <div class="student-meta">
+                <span>⭐ XP 540</span>
+                <span>Level 2</span>
+                <span>📁 4 Projects</span>
+              </div>
+              <div class="status-row">
+                <span class="status available">💡 Looking for Job</span>
+                <div class="student-actions">
+                  <button class="outline-btn" type="button" data-open-modal="mohamedModal">Quick View</button>
+                  <button class="outline-btn tag-btn" type="button">Needs Review</button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p class="results-counter" id="resultsCounter">Showing 3 students</p>
+        </section>
+
+        <section class="dual-grid">
+          <article class="panel-card reveal" id="jobs">
+            <div class="card-head">
+              <div>
+                <h3>Job / Talent Matching</h3>
+                <p>اعرض الوظائف وافتح أفضل المرشحين لكل وظيفة</p>
+              </div>
+              <span class="mini-badge">Matching</span>
+            </div>
+
+            <div class="jobs-list">
+              <article class="job-card stagger-item">
+                <div>
+                  <strong>Junior Data Analyst</strong>
+                  <p>Required Track: Data Analysis</p>
+                </div>
+                <div class="job-side">
+                  <span>👥 16 Applicants</span>
+                  <div class="job-filters">
+                    <span class="mini-badge">Track: Data</span>
+                    <span class="mini-badge">XP 500+</span>
+                  </div>
+                  <a class="outline-btn" href="#students">Recommended Students</a>
+                </div>
+                <div class="applicant-preview">
+                  <button class="mini-applicant" type="button" data-open-modal="gamalModal">Gamal</button>
+                  <button class="mini-applicant" type="button" data-open-modal="Abdulrahman Al-QistModal">Abdulrahman</button>
+                  <button class="mini-applicant" type="button" data-open-modal="Amr AbbasModal">Amr</button>
+                </div>
+              </article>
+              <article class="job-card stagger-item">
+                <div>
+                  <strong>Frontend Developer</strong>
+                  <p>Required Track: Software</p>
+                </div>
+                <div class="job-side">
+                  <span>👥 11 Applicants</span>
+                  <div class="job-filters">
+                    <span class="mini-badge">Track: Software</span>
+                    <span class="mini-badge">Score 70%+</span>
+                  </div>
+                  <a class="outline-btn" href="#students">Recommended Students</a>
+                </div>
+                <div class="applicant-preview">
+                  <button class="mini-applicant" type="button" data-open-modal="Abdulrahman Al-QistModal">Abdulrahman</button>
+                  <button class="mini-applicant" type="button" data-open-modal="gamalModal">Gamal</button>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="panel-card reveal" id="reports">
+            <div class="card-head">
+              <div>
+                <h3>Analytics / Insights</h3>
+                <p>تقارير بصرية سريعة تساعد في القرار</p>
+              </div>
+              <span class="mini-badge">Interactive</span>
+            </div>
+
+            <div class="filters-row analytics-toolbar">
+              <select class="filter-input" id="analyticsDepartmentFilter">
+                <option class="option_bg"  value="all">All Departments</option>
+                <option class="option_bg"  value="data">Data</option>
+                <option class="option_bg"  value="software">Software</option>
+                <option class="option_bg"  value="design">Design</option>
+              </select>
+              <select class="filter-input" id="analyticsJobTypeFilter">
+                <option class="option_bg"  value="all">All Job Types</option>
+                <option class="option_bg"  value="internship">Internship</option>
+                <option class="option_bg"  value="full-time">Full-time</option>
+              </select>
+            </div>
+
+            <div class="chart-group">
+              <div class="chart-card">
+                <strong>Skill Distribution</strong>
+                <div class="chart-bars" id="companyTopSkillsChart"></div>
+              </div>
+              <div class="chart-card">
+                <strong>Candidate Distribution</strong>
+                <div class="distribution-chart" id="companyDistributionChart"></div>
+              </div>
+              <div class="chart-card">
+                <strong>Average Match</strong>
+                <div class="gauge-card">
+                  <div class="gauge-ring">
+                    <svg viewBox="0 0 120 120">
+                      <circle class="gauge-ring-bg" cx="60" cy="60" r="46"></circle>
+                      <circle class="gauge-ring-value" id="companyAverageMatchRing" cx="60" cy="60" r="46"></circle>
+                    </svg>
+                    <div class="gauge-copy">
+                      <strong id="companyAverageMatchLabel">0%</strong>
+                      <span>Avg Match</span>
+                    </div>
+                  </div>
+                  <div class="mini-list" id="companyTopStudentsList"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <aside class="quick-panel">
+        <article class="panel-card reveal">
+          <div class="card-head">
+            <div>
+              <h3>Recent Applications</h3>
+              <p>آخر الطلبات الواردة</p>
+            </div>
+            <span class="mini-badge">Live</span>
+          </div>
+
+          <div class="mini-list" id="companyRecentApplications"></div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="card-head">
+            <div>
+              <h3>Achievements</h3>
+              <p>مؤشرات الأداء السريعة</p>
+            </div>
+            <span class="mini-badge">Gamified</span>
+          </div>
+
+          <div class="achievement-list">
+            <div class="achievement-item"><strong>Top Talent</strong><span>91% أعلى مطابقة</span></div>
+            <div class="achievement-item"><strong>Fast Review</strong><span>8 مراجعات هذا الأسبوع</span></div>
+            <div class="achievement-item"><strong>Ranking Ready</strong><span>ترتيب الطلاب جاهز الآن</span></div>
+          </div>
+        </article>
+
+        <article class="panel-card reveal">
+          <div class="card-head">
+            <div>
+              <h3>Export Data</h3>
+              <p>تنزيل التقارير والبيانات</p>
+            </div>
+            <span class="mini-badge">PDF / Excel</span>
+          </div>
+
+          <div class="export-actions">
+            <a class="outline-btn" href="#">Export PDF</a>
+            <a class="outline-btn" href="#">Export Excel</a>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </main>
+
+ 
+
+  <div class="modal-overlay hidden" id="modalOverlay"></div>
+
+  <section class="student-modal hidden" id="gamalModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <h3>Gamal Ellithy </h3>
+      <p>Track / Specialization: Data Analysis</p>
+      <div class="modal-tabs">
+        <button class="modal-tab active" type="button" data-tab-target="gamal-overview">Overview</button>
+        <button class="modal-tab" type="button" data-tab-target="gamal-projects">Projects</button>
+        <button class="modal-tab" type="button" data-tab-target="gamal-certificates">Certificates</button>
+      </div>
+      <div class="modal-tab-panel active" id="gamal-overview">
+      <div class="modal-grid">
+        <div><strong>Age</strong><span>17 سنة</span></div>
+        <div><strong>Email</strong><span>gamal@email.com</span></div>
+        <div><strong>Current Job</strong><span>غير موظف حاليًا</span></div>
+        <div><strong>Status</strong><span class="status available">💡 Available</span></div>
+      </div>
+      </div>
+      <div class="modal-tab-panel" id="gamal-projects">
+        <strong>Projects Overview</strong>
+        <div class="modal-projects">
+          <article><span>Dashboard</span><small>Students Analytics</small></article>
+          <article><span>SQL Report</span><small>Insights Query Pack</small></article>
+          <article><span>Python Tool</span><small>Data Cleaner Script</small></article>
+        </div>
+      </div>
+      <div class="modal-tab-panel" id="gamal-certificates">
+        <strong>Certificates Overview</strong>
+        <div class="modal-projects">
+          <article><span>Python Foundations</span><small>2026</small></article>
+          <article><span>Data Analysis Basics</span><small>2026</small></article>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a class="primary-btn" href="mailto:gamal@email.com">Contact Student</a>
+        <a class="outline-btn" href="#contractPanel">Invite to Interview</a>
+      </div>
+    </div>
+  </section>
+<!-- ااااااا -->
+  <section class="student-modal hidden" id="saraModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <h3> Abdulrahman Al-Qist</h3>
+      <p>Track / Specialization: Data Analysis</p>
+      <div class="modal-tabs">
+        <button class="modal-tab active" type="button" data-tab-target="sara-overview">Overview</button>
+        <button class="modal-tab" type="button" data-tab-target="sara-projects">Projects</button>
+        <button class="modal-tab" type="button" data-tab-target="sara-certificates">Certificates</button>
+      </div>
+      <div class="modal-tab-panel active" id="sara-overview">
+      <div class="modal-grid">
+        <div><strong>Age</strong><span>22 سنة</span></div>
+        <div><strong>Email</strong><span>Abdulrahman Al-Qist@email.com</span></div>
+        <div><strong>Current Job</strong><span>شركة X</span></div>
+        <div><strong>Status</strong><span class="status employed">✅ Employed</span></div>
+      </div>
+      </div>
+      <div class="modal-tab-panel" id="sara-projects">
+        <strong>Projects Overview</strong>
+        <div class="modal-projects">
+          <article><span>BI Dashboard</span><small>Forecasting</small></article>
+          <article><span>Sales Monitor</span><small>Power BI</small></article>
+          <article><span>Data Story</span><small>Reporting UX</small></article>
+        </div>
+      </div>
+      <div class="modal-tab-panel" id="sara-certificates">
+        <strong>Certificates Overview</strong>
+        <div class="modal-projects">
+          <article><span>SQL Advanced</span><small>2026</small></article>
+          <article><span>Excel Analytics</span><small>2026</small></article>
+          <article><span>Data Storytelling</span><small>2025</small></article>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a class="primary-btn" href="mailto:sara@email.com">Contact Student</a>
+        <a class="outline-btn" href="#contractPanel">Invite to Interview</a>
+      </div>
+    </div>
+  </section>
+<!-- 99999999999999999999999 -->
+  <section class="student-modal hidden" id="Amr Abbas Modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <h3> Amr Abbas</h3>
+      <p>Track / Specialization: Software Engineering</p>
+      <div class="modal-tabs">
+        <button class="modal-tab active" type="button" data-tab-target="mohamed-overview">Overview</button>
+        <button class="modal-tab" type="button" data-tab-target="mohamed-projects">Projects</button>
+        <button class="modal-tab" type="button" data-tab-target="mohamed-certificates">Certificates</button>
+      </div>
+      <div class="modal-tab-panel active" id="mohamed-overview">
+      <div class="modal-grid">
+        <div><strong>Age</strong><span>17 سنة</span></div>
+        <div><strong>Email</strong><span>Amr Abbas@email.com</span></div>
+        <div><strong>Current Job</strong><span>Intern</span></div>
+        <div><strong>Status</strong><span class="status available">💡 Available</span></div>
+      </div>
+      </div>
+      <div class="modal-tab-panel" id="mohamed-projects">
+        <strong>Projects Overview</strong>
+        <div class="modal-projects">
+          <article><span>React UI</span><small>Reviewed</small></article>
+          <article><span>Node API</span><small>Approved</small></article>
+          <article><span>Portfolio</span><small>Submitted</small></article>
+        </div>
+      </div>
+      <div class="modal-tab-panel" id="mohamed-certificates">
+        <strong>Certificates Overview</strong>
+        <div class="modal-projects">
+          <article><span>JavaScript</span><small>2026</small></article>
+          <article><span>Responsive UI</span><small>2025</small></article>
+          <article><span>Git</span><small>2025</small></article>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a class="primary-btn" href="mailto:mohamed@email.com">Contact Student</a>
+        <a class="outline-btn" href="#contractPanel">Invite to Interview</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel-card contract-panel" id="contractPanel">
+    <div class="contract-card">
+      <div class="card-head">
+        <div>
+          <h3>Discuss Contract / Sign Deal</h3>
+          <p>صفحة مبدئية للتعاقد الرقمي بين الشركة والطالب</p>
+        </div>
+        <span class="mini-badge">Digital Flow</span>
+      </div>
+      <div class="contract-grid">
+        <div><strong>تفاصيل العقد</strong><span>مدة العمل، نوع الدور، نطاق المسؤوليات</span></div>
+        <div><strong>شروط العمل</strong><span>هجين / ريموت / بدوام كامل أو جزئي</span></div>
+        <div><strong>الموافقة</strong><span>إرسال إشعار للطرفين وتسجيل حالة العقد</span></div>
+      </div>
+      <div class="modal-actions">
+        <a class="primary-btn" href="#">Send Offer</a>
+        <a class="outline-btn" href="#">Save Draft</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="notification-center company-notification-center">
+    <button class="notification-fab" id="companyNotificationFab" type="button" aria-label="فتح مركز الإشعارات">
+      <span>🔔</span>
+      <strong id="companyNotificationCount">0</strong>
+    </button>
+    <div class="notification-panel hidden" id="companyNotificationPanel">
+      <div class="notification-panel-head">
+        <strong>Hiring Alerts</strong>
+        <button class="notification-clear" id="companyMarkAllRead" type="button">Mark all read</button>
+      </div>
+      <div class="notification-feed" id="companyNotificationFeed"></div>
+    </div>
+  </div>
+
+  <script src="company-dashboard.js"></script>
+</body>
+</html>

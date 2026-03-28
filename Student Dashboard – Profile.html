@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Student Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Student Dashboard – Profile.css">
+</head>
+<body>
+  <div class="profile-page">
+    <header class="profile-topbar" id="profileTopbar">
+      <div class="topbar-shell">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">SB</span>
+          <span class="brand-copy">
+            <strong>Skill Bridge</strong>
+            <small>Student Profile</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="فتح القائمة">☰</button>
+
+        <nav class="topbar-links">
+          <a href="student-dashboard.html">Dashboard</a>
+          <a class="active" href="talent-dna.html">Profile</a>
+          <a href="learning-path.html">Learning</a>
+          <a href="smart-jobs.html">Jobs</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <button class="icon-btn" type="button" data-dropdown-trigger="notificationsMenu" aria-label="الإشعارات">🔔</button>
+          <div class="dropdown-menu" id="notificationsMenu">
+            <strong>Latest Updates</strong>
+            <a href="#activity">تمت إضافة شهادة Google Data Analytics</a>
+            <a href="#projects">تمت مراجعة مشروع Customer Insights</a>
+            <a href="#skills">ارتفع Python XP هذا الأسبوع</a>
+          </div>
+
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="تبديل الوضع">◐</button>
+
+          <button class="profile-chip" type="button" data-dropdown-trigger="profileMenu">
+            <span class="avatar-sm">GA</span>
+            <span>جمال</span>
+          </button>
+          <div class="dropdown-menu" id="profileMenu">
+            <strong>Quick Actions</strong>
+            <a href="#overview">Overview</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="student-auth.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="profile-main">
+      <section class="profile-hero reveal">
+        <div class="hero-surface">
+          <div class="hero-identity">
+            <div class="avatar-xl">
+              <span>GA</span>
+              <div class="status-dot available" title="Available for opportunities"></div>
+            </div>
+
+            <div class="hero-copy">
+              <div class="eyebrow">Talent Passport</div>
+              <h1>Gamal Ellithy </h1>
+              <p class="hero-role">Data Analysis Track</p>
+              <p class="hero-summary">تحب قراءة الأنماط أكثر من العمل العشوائي، وتميل لتحويل البيانات إلى قرارات واضحة. هذا ما يجعل ملفك مناسبًا للشركات التي تبحث عن محلل يفهم التفاصيل بسرعة.</p>
+
+              <div class="meta-row">
+                <span class="meta-pill">Available</span>
+                <span class="meta-pill">القاهرة، مصر</span>
+                <span class="meta-pill">Internship / Full-time</span>
+              </div>
+
+              <div class="completion-card">
+                <div class="completion-head">
+                  <strong>Profile Completion</strong>
+                  <span>86%</span>
+                </div>
+                <div class="progress-track"><span style="width:86%"></span></div>
+                <p>فاضل خطوة واحدة لتقوية ظهورك أمام الشركات: أضف فيديو تعريفي أو مشروع أخير.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions-panel">
+            <div class="match-card">
+              <small>Talent Signal</small>
+              <strong>82% Data Match</strong>
+              <p>أنت قريب جدًا من الأدوار التي تعتمد على التحليل، SQL، وقراءة الـ dashboards.</p>
+            </div>
+
+            <div class="action-stack">
+              <button class="primary-btn" type="button" data-toast="تم فتح وسيلة التواصل مع الطالب">Contact</button>
+              <button class="secondary-btn" type="button" data-toast="تم إرسال دعوة مبدئية للمقابلة">Invite to Interview</button>
+              <button class="ghost-btn" type="button" data-toast="تم تجهيز نسخة الـ Resume للتحميل">Download Resume PDF</button>
+              <button class="ghost-btn" type="button" data-toast="تمت إضافة الطالب إلى المفضلة">Bookmark Student</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid reveal">
+        <article class="stat-card">
+          <small>XP</small>
+          <strong>1,240</strong>
+          <p>معدل تقدم ممتاز خلال آخر 8 أسابيع</p>
+          <div class="mini-progress"><span style="width:78%"></span></div>
+        </article>
+        <article class="stat-card">
+          <small>Level / Rank</small>
+          <strong>Level 3 Builder</strong>
+          <p>ضمن أفضل 18% في مسار Data</p>
+        </article>
+        <article class="stat-card">
+          <small>Projects</small>
+          <strong>6</strong>
+          <p>منها 3 مشاريع تمت مراجعتها واعتمادها</p>
+        </article>
+        <article class="stat-card">
+          <small>Certificates</small>
+          <strong>4</strong>
+          <p>Google, Coursera, Microsoft, Udemy</p>
+        </article>
+      </section>
+
+      <section class="highlight-grid reveal">
+        <article class="highlight-card">
+          <div class="card-head">
+            <h2>Top Skills</h2>
+            <span class="chip">Hover to inspect</span>
+          </div>
+          <div class="skills-cloud">
+            <button class="skill-tag" type="button" data-skill-info="استخدم Python في تنظيف البيانات وبناء scripts لتحليل CSV كبيرة.">Python</button>
+            <button class="skill-tag" type="button" data-skill-info="يبني queries واضحة ويقرأ العلاقات بين الجداول بسرعة.">SQL</button>
+            <button class="skill-tag" type="button" data-skill-info="يحوّل الأرقام إلى dashboards مفهومة وسريعة القراءة.">Power BI</button>
+            <button class="skill-tag" type="button" data-skill-info="قادر على تفسير الاتجاهات واستخراج insights عملية.">Analytics</button>
+            <button class="skill-tag" type="button" data-skill-info="ينظم النتائج في تقارير وعروض مختصرة وواضحة.">Reporting</button>
+          </div>
+          <div class="skill-preview" id="skillPreview">مرر على أي مهارة لرؤية مثال سريع يثبتها.</div>
+        </article>
+
+        <article class="highlight-card">
+          <div class="card-head">
+            <h2>Badges & Highlights</h2>
+            <span class="chip">Gamified</span>
+          </div>
+          <div class="badge-grid">
+            <div class="badge-card"><strong>Explorer</strong><span>أكمل Quiz + أول Profile</span></div>
+            <div class="badge-card"><strong>Analyzer</strong><span>أنهى 3 Dashboards تحليلية</span></div>
+            <div class="badge-card"><strong>Consistent</strong><span>6 أسابيع تعلم متتالية</span></div>
+            <div class="badge-card"><strong>Top Reviewer</strong><span>مشاريعه تحصل على تقييمات قوية</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-layout">
+        <div class="content-main">
+          <section class="tabs-shell reveal">
+            <div class="tabs-header">
+              <button class="tab-btn active" type="button" data-tab-target="overview">Overview</button>
+              <button class="tab-btn" type="button" data-tab-target="projects">Projects</button>
+              <button class="tab-btn" type="button" data-tab-target="certificates">Certificates</button>
+              <button class="tab-btn" type="button" data-tab-target="skills">Skills</button>
+              <button class="tab-btn" type="button" data-tab-target="activity">Activity</button>
+            </div>
+
+            <div class="tab-panel active" id="overview">
+              <div class="panel-grid">
+                <article class="info-card">
+                  <div class="card-head">
+                    <h3>Overview</h3>
+                    <span class="chip">Quick Facts</span>
+                  </div>
+                  <div class="info-list">
+                    <div><span>Age</span><strong>21 سنة</strong></div>
+                    <div><span>Email</span><strong>gamal@email.com</strong></div>
+                    <div><span>Current Job</span><strong>Data Intern</strong></div>
+                    <div><span>Status</span><strong>Looking for Internship</strong></div>
+                  </div>
+                </article>
+
+                <article class="info-card">
+                  <div class="card-head">
+                    <h3>About Me</h3>
+                    <span class="chip">Human Story</span>
+                  </div>
+                  <p class="body-copy">أحب أن أفهم لماذا يحدث الشيء قبل أن أتعامل معه. بدأت رحلتي من حب الإكسل والأرقام، ثم اتجهت إلى SQL وPython وPower BI لأنني أحب رؤية القصة داخل البيانات، وليس فقط الأرقام نفسها. هدفي القادم أن أعمل على dashboards وbusiness insights لها أثر حقيقي.</p>
+                </article>
+
+                <article class="info-card wide">
+                  <div class="card-head">
+                    <h3>Mini Highlights</h3>
+                    <span class="chip">Fast Read</span>
+                  </div>
+                  <div class="mini-cards">
+                    <div class="mini-highlight"><strong>6 Projects</strong><span>3 approved + 2 reviewed</span></div>
+                    <div class="mini-highlight"><strong>4 Certificates</strong><span>Verified learning path</span></div>
+                    <div class="mini-highlight"><strong>82% Match</strong><span>Data Analysis roles</span></div>
+                    <div class="mini-highlight"><strong>72% Similarity</strong><span>مع ملفات Data Analysts المبتدئين</span></div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="projects">
+              <div class="section-tools">
+                <div class="tool-group">
+                  <label for="projectTech">Filter by Tech</label>
+                  <select id="projectTech">
+                    <option class="option_bg" value="all">All</option>
+                    <option class="option_bg" value="python">Python</option>
+                    <option class="option_bg" value="sql">SQL</option>
+                    <option class="option_bg" value="powerbi">Power BI</option>
+                  </select>
+                </div>
+                <div class="tool-group">
+                  <label for="projectYear">Filter by Year</label>
+                  <select id="projectYear">
+                    <option class="option_bg" value="all">All</option>
+                    <option class="option_bg" value="2026">2026</option>
+                    <option class="option_bg" value="2025">2025</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="projects-grid" id="projectsGrid">
+                <article class="project-card" data-tech="python powerbi" data-year="2026">
+                  <div class="project-preview">
+                    <span>Customer Insights Dashboard</span>
+                    <small>Power BI + Python</small>
+                  </div>
+                  <p>تحليل churn وسلوك العملاء مع dashboard تفاعلي وتوصيات عملية.</p>
+                  <div class="project-meta">
+                    <span>Reviewed</span>
+                    <a href="#">Open Project</a>
+                  </div>
+                </article>
+
+                <article class="project-card" data-tech="sql python" data-year="2026">
+                  <div class="project-preview">
+                    <span>Retail SQL Analyzer</span>
+                    <small>SQL + Python</small>
+                  </div>
+                  <p>بناء queries لاستخراج أفضل المنتجات، نسبة الربحية، واتجاهات المبيعات.</p>
+                  <div class="project-meta">
+                    <span>Approved</span>
+                    <a href="#">Open GitHub</a>
+                  </div>
+                </article>
+
+                <article class="project-card" data-tech="powerbi" data-year="2025">
+                  <div class="project-preview">
+                    <span>Hiring Funnel Story</span>
+                    <small>Power BI</small>
+                  </div>
+                  <p>Dashboard يربط بين CV screening والمقابلات والقبول النهائي بصريًا.</p>
+                  <div class="project-meta">
+                    <span>Submitted</span>
+                    <a href="#">Preview</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="certificates">
+              <div class="certificates-grid">
+                <article class="cert-card">
+                  <div>
+                    <strong>Google Data Analytics</strong>
+                    <span>Google • 2026</span>
+                  </div>
+                  <div class="cert-actions">
+                    <span class="verified-badge">Verified</span>
+                    <a href="#">PDF</a>
+                  </div>
+                </article>
+                <article class="cert-card">
+                  <div>
+                    <strong>Python for Everybody</strong>
+                    <span>Coursera • 2026</span>
+                  </div>
+                  <div class="cert-actions">
+                    <span class="verified-badge">Verified</span>
+                    <a href="#">PDF</a>
+                  </div>
+                </article>
+                <article class="cert-card">
+                  <div>
+                    <strong>SQL Foundations</strong>
+                    <span>Microsoft • 2025</span>
+                  </div>
+                  <div class="cert-actions">
+                    <span class="verified-badge">Verified</span>
+                    <a href="#">PDF</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="skills">
+              <div class="skill-bars">
+                <div class="skill-row">
+                  <div class="skill-head"><strong>Python</strong><span>Advanced</span></div>
+                  <div class="progress-track"><span style="width:81%"></span></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-head"><strong>SQL</strong><span>Advanced</span></div>
+                  <div class="progress-track"><span style="width:86%"></span></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-head"><strong>Power BI</strong><span>Intermediate</span></div>
+                  <div class="progress-track"><span style="width:74%"></span></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-head"><strong>Communication</strong><span>Intermediate</span></div>
+                  <div class="progress-track"><span style="width:68%"></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="activity">
+              <div class="activity-tools">
+                <button class="filter-pill active" type="button" data-activity-filter="all">All</button>
+                <button class="filter-pill" type="button" data-activity-filter="project">Projects</button>
+                <button class="filter-pill" type="button" data-activity-filter="certificate">Certificates</button>
+                <button class="filter-pill" type="button" data-activity-filter="status">Status</button>
+              </div>
+
+              <div class="timeline" id="activityTimeline">
+                <article class="timeline-card" data-type="certificate">
+                  <span class="timeline-icon">🏆</span>
+                  <div>
+                    <strong>حصل على شهادة Google Data Analytics</strong>
+                    <p>أضيفت الشهادة وتم توثيقها داخل البروفايل.</p>
+                  </div>
+                  <small>منذ 3 أيام</small>
+                </article>
+                <article class="timeline-card" data-type="project">
+                  <span class="timeline-icon">📁</span>
+                  <div>
+                    <strong>تحديث مشروع Customer Insights</strong>
+                    <p>تمت إضافة screenshots وشرح business impact.</p>
+                  </div>
+                  <small>منذ أسبوع</small>
+                </article>
+                <article class="timeline-card" data-type="status">
+                  <span class="timeline-icon">💡</span>
+                  <div>
+                    <strong>تغيير الحالة إلى Looking for Internship</strong>
+                    <p>الملف الآن ظاهر للشركات التي تبحث عن Internships.</p>
+                  </div>
+                  <small>منذ 10 أيام</small>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="content-side">
+          <section class="side-card reveal">
+            <div class="card-head">
+              <h3>Sticky Actions</h3>
+              <span class="chip">For Recruiters</span>
+            </div>
+            <div class="sticky-actions">
+              <button class="primary-btn" type="button" data-toast="تم فتح البريد المباشر للطالب">Quick Contact</button>
+              <button class="secondary-btn" type="button" data-toast="تمت إضافة دعوة مقابلة على النظام">Invite Interview</button>
+              <button class="ghost-btn" type="button" data-toast="تم نسخ رابط البروفايل">Copy Profile Link</button>
+            </div>
+          </section>
+
+          <section class="side-card reveal">
+            <div class="card-head">
+              <h3>QR Profile</h3>
+              <span class="chip">Mobile Ready</span>
+            </div>
+            <div class="qr-card">
+              <div class="qr-grid"></div>
+              <p>امسح الكود للوصول إلى البروفايل مباشرة من الهاتف.</p>
+            </div>
+          </section>
+
+          <section class="side-card reveal">
+            <div class="card-head">
+              <h3>Recommendations</h3>
+              <span class="chip">Social Proof</span>
+            </div>
+            <div class="recommendation-list">
+              <article>
+                <strong>د. محمد علي</strong>
+                <p>جمال سريع جدًا في فهم البيانات وترتيبها في شكل قصصي واضح.</p>
+              </article>
+              <article>
+                <strong>Mentor - Data Track</strong>
+                <p>من أفضل الطلاب التزامًا، ومشاريعه تتحسن من نسخة لأخرى بشكل ملحوظ.</p>
+              </article>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="profileToast"></div>
+
+  <script src="./Student Dashboard – Profile.js"></script>
+</body>
+</html>

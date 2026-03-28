@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="لوحة تحكم الطالب في SkillBridge لمتابعة المسار، المهارات، التقدم، والفرص المناسبة."
+  >
+  <title>SkillBridge | Student Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="student-dashboard.css">
+</head>
+<body>
+  <header class="student-topbar" id="studentTopbar">
+    <div class="topbar-shell">
+      <a class="brand" href="student-dashboard.html" aria-label="SkillBridge">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>SkillBridge</strong>
+          <small>Student Dashboard</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        data-menu-toggle
+        aria-label="فتح القائمة"
+        aria-expanded="false"
+        aria-controls="topbarLinks topbarActions"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="topbar-links" id="topbarLinks">
+        <a class="active" href="student-dashboard.html">Dashboard</a>
+        <a href="learning-path.html">Learning Path</a>
+        <a href="smart-jobs.html">Smart Jobs</a>
+        <a href="candidate-passport.html">Passport</a>
+      </nav>
+
+      <div class="topbar-actions" id="topbarActions">
+        <div class="dropdown-host">
+          <button
+            class="icon-btn has-badge"
+            id="studentNotificationsTrigger"
+            type="button"
+            data-dropdown-trigger="notificationsDropdown"
+            data-badge="0"
+            aria-label="الإشعارات"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true">🔔</span>
+          </button>
+          <div class="dropdown-panel" id="notificationsDropdown">
+            <strong>آخر التحديثات</strong>
+            <div class="dropdown-notifications" id="studentNotificationsList"></div>
+          </div>
+        </div>
+
+        <div class="dropdown-host">
+          <button
+            class="profile-btn"
+            type="button"
+            data-dropdown-trigger="profileDropdown"
+            aria-expanded="false"
+          >
+            <span class="avatar-sm" id="topbarAvatar">GA</span>
+            <span id="topbarName">Gamal</span>
+          </button>
+          <div class="dropdown-panel" id="profileDropdown">
+            <strong>حسابي</strong>
+            <a href="talent-dna.html">Talent DNA</a>
+            <a href="candidate-passport.html">Candidate Passport</a>
+            <a href="student-auth.html">تسجيل الخروج</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <div class="dashboard-shell">
+      <aside class="sidebar reveal">
+        <div class="sidebar-user">
+          <div class="avatar" id="sidebarAvatar">GA</div>
+          <div>
+            <h2 id="sidebarName">Gamal Ellithy</h2>
+            <p id="sidebarTrack">Data Analysis Track</p>
+          </div>
+        </div>
+
+        <div class="sidebar-note">
+          <strong>أنت هنا الآن</strong>
+          <p id="sidebarNoteCopy">أنهيت التحليل. الخطوة الأهم الآن هي تقوية مهارة أساسية ثم التقديم على فرصة مناسبة.</p>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="active" href="student-dashboard.html">Dashboard</a>
+          <a href="learning-path.html">Learning Path</a>
+          <a href="smart-jobs.html">Smart Jobs</a>
+          <a href="talent-dna.html">Talent DNA</a>
+          <a href="candidate-passport.html">Candidate Passport</a>
+        </nav>
+      </aside>
+
+      <section class="main-content">
+        <section class="hero-card reveal">
+          <div class="hero-copy">
+            <span class="section-tag" id="welcomeTag">Welcome Back</span>
+            <h1 id="welcomeTitle">Welcome Gamal</h1>
+            <p id="welcomeCopy">الصورة أصبحت أوضح: ركّز على المهارة التالية، حدّث بروفايلك، ثم تابع الفرص المناسبة.</p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="talent-dna.html" id="heroPrimaryAction">افتح Talent DNA</a>
+            <a class="ghost-btn" href="smart-jobs.html" id="heroSecondaryAction">شاهد الوظائف المناسبة</a>
+          </div>
+        </section>
+
+        <section class="journey-guide reveal">
+          <article class="journey-step is-done">
+            <span>1</span>
+            <strong>اكتشاف المسار</strong>
+            <p>حددت الاتجاه الأقرب لك وفهمت نقطة البداية.</p>
+          </article>
+          <article class="journey-step is-active">
+            <span>2</span>
+            <strong>بناء المهارات</strong>
+            <p id="journeyActiveCopy">دلوقتي ركّز على المهارة التي سترفع فرصك أسرع.</p>
+          </article>
+          <article class="journey-step">
+            <span>3</span>
+            <strong>الاستعداد والتقديم</strong>
+            <p>بعد الخطوة الجاية ستكون جاهزًا أكثر للتقديم ومشاركة بروفايلك.</p>
+          </article>
+        </section>
+
+        <section class="snapshot-grid reveal">
+          <article class="snapshot-card snapshot-card-wide">
+            <div class="card-head">
+              <div>
+                <span class="section-tag">Talent Snapshot</span>
+                <h2 id="snapshotTitle">أنت أقرب إلى Data Analysis</h2>
+              </div>
+              <span class="match-pill" id="snapshotMatch">82%</span>
+            </div>
+            <p id="snapshotCopy">المسار الأقرب لك يعتمد على التحليل، حل المشكلات، وتحويل البيانات إلى قرارات واضحة.</p>
+            <div class="progress-box">
+              <div class="progress-head">
+                <strong>Journey Progress</strong>
+                <span id="journeyProgressCopy">60%</span>
+              </div>
+              <div class="progress-track large" aria-hidden="true">
+                <span id="journeyProgressBar" style="width: 60%"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="snapshot-card">
+            <span class="section-tag">Next Best Step</span>
+            <strong id="nextStepTitle">تعلم Python</strong>
+            <p id="nextStepCopy">هذه هي المهارة التي سترفع فرص قبولك بشكل مباشر في الوظائف الأقرب لك.</p>
+            <a class="primary-btn" href="learning-path.html" id="nextStepAction">ابدأ الخطوة التالية</a>
+          </article>
+
+          <article class="snapshot-card">
+            <span class="section-tag">XP & Level</span>
+            <strong id="levelBadge">Level 2 - Explorer</strong>
+            <div class="progress-box">
+              <div class="progress-head">
+                <strong>XP Progress</strong>
+                <span id="xpProgressCopy">620 / 1000</span>
+              </div>
+              <div class="progress-track" aria-hidden="true">
+                <span id="xpProgressBar" style="width: 62%"></span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="focus-grid reveal">
+          <article class="panel-card">
+            <div class="card-head">
+              <div>
+                <h3>Top Skills</h3>
+                <p>المهارات الحالية التي تدعم بروفايلك الآن</p>
+              </div>
+            </div>
+            <div class="skill-list" id="topSkillsList"></div>
+          </article>
+
+          <article class="panel-card">
+            <div class="card-head">
+              <div>
+                <h3>Skill Gaps</h3>
+                <p>المهارات التي لو طورتها سترفع فرصك بشكل أسرع</p>
+              </div>
+            </div>
+            <div class="gap-list" id="skillGapsList"></div>
+          </article>
+
+          <article class="panel-card">
+            <div class="card-head">
+              <div>
+                <h3>Quick Actions</h3>
+                <p>كل خطوة هنا مباشرة ومتصلة بما تحتاجه الآن</p>
+              </div>
+            </div>
+            <div class="action-list">
+              <a class="action-card" href="talent-dna.html">
+                <strong>افتح Talent DNA</strong>
+                <span>راجع نتيجتك وما الذي يجعل هذا المسار مناسبًا لك</span>
+              </a>
+              <a class="action-card" href="learning-path.html">
+                <strong>ابدأ خطة التعلم</strong>
+                <span>حوّل النتيجة إلى مهارات عملية واضحة</span>
+              </a>
+              <a class="action-card" href="candidate-passport.html">
+                <strong>افتح Passport</strong>
+                <span>راجع النسخة الجاهزة للمشاركة أمام الشركات</span>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section class="analytics-grid reveal">
+          <article class="panel-card">
+            <div class="card-head">
+              <div>
+                <h3>Growth Timeline</h3>
+                <p>ملخص سريع لما أنجزته وما الذي يجب أن يأتي بعده</p>
+              </div>
+            </div>
+            <div class="timeline-chart" id="studentGrowthChart"></div>
+          </article>
+
+          <article class="panel-card">
+            <div class="card-head">
+              <div>
+                <h3>Achievements</h3>
+                <p>إنجازات صغيرة تساعدك تتابع تقدمك وتبني ثقة حقيقية</p>
+              </div>
+            </div>
+            <div class="badge-summary" id="studentBadgeSummary"></div>
+          </article>
+        </section>
+
+        <section class="content-grid reveal">
+          <article class="panel-card" id="projects">
+            <div class="card-head">
+              <div>
+                <h3>Projects</h3>
+                <p>المشاريع التي تثبت شغلك قدام الشركات</p>
+              </div>
+              <a class="ghost-btn" href="candidate-passport.html">View Passport</a>
+            </div>
+            <div class="projects-grid" id="projectsGrid"></div>
+          </article>
+
+          <article class="panel-card">
+            <div class="card-head">
+              <div>
+                <h3>Jobs Snapshot</h3>
+                <p>وضعك الحالي في الفرص والتقديمات</p>
+              </div>
+            </div>
+            <div class="jobs-stats" id="jobsStats"></div>
+          </article>
+        </section>
+      </section>
+
+      <aside class="quick-panel">
+        <article class="panel-card reveal">
+          <div class="card-head">
+            <div>
+              <h3>Today Focus</h3>
+              <p>لو ستعمل شيئًا واحدًا اليوم، اجعله هذا</p>
+            </div>
+            <span class="mini-badge">Focus</span>
+          </div>
+          <div class="focus-box">
+            <strong id="todayFocusTitle">كمّل Python Basics</strong>
+            <p id="todayFocusCopy">لأنها أسرع خطوة ترفع الـ match وتجهزك للتقديم.</p>
+          </div>
+        </article>
+
+        <article class="panel-card reveal" id="updates">
+          <div class="card-head">
+            <div>
+              <h3>Updates</h3>
+              <p>كل التحديثات المهمة في مكان واحد</p>
+            </div>
+            <span class="mini-badge">Live</span>
+          </div>
+          <div class="updates-list" id="studentUpdatesList"></div>
+        </article>
+      </aside>
+    </div>
+  </main>
+
+  <div class="notification-center">
+    <button class="notification-fab" id="studentNotificationFab" type="button" aria-label="فتح مركز الإشعارات">
+      <span aria-hidden="true">🔔</span>
+      <strong id="studentNotificationCount">0</strong>
+    </button>
+    <div class="notification-panel hidden" id="studentNotificationPanel">
+      <div class="notification-panel-head">
+        <strong>Notification Center</strong>
+        <button class="notification-clear" id="studentMarkAllRead" type="button">Mark all read</button>
+      </div>
+      <div class="notification-feed" id="studentNotificationFeed"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="studentDashboardToast"></div>
+
+  <script src="student-dashboard.js"></script>
+</body>
+</html>

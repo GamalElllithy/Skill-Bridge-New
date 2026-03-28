@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Applied Jobs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="jobs-library.css">
+</head>
+<body data-library-page="library">
+  <main class="library-shell">
+    <section class="library-topbar">
+      <div class="library-links">
+        <a class="nav-pill" id="libraryAppliedTab" href="applied-jobs.html?tab=applied">Applied Jobs</a>
+        <a class="nav-pill" id="librarySavedTab" href="applied-jobs.html?tab=saved">Saved Jobs</a>
+        <a class="nav-pill" href="smart-jobs.html">Smart Jobs</a>
+        <a class="nav-pill" href="candidate-passport.html">Candidate Passport</a>
+      </div>
+      <a class="primary-btn" href="student-dashboard.html">Back to Dashboard</a>
+    </section>
+
+    <section class="library-hero">
+      <h1 id="libraryTitle">Jobs Library</h1>
+      <p id="libraryCopy"></p>
+      <div class="hero-actions">
+        <span class="match-pill" id="libraryCount">0 Items</span>
+      </div>
+    </section>
+
+    <section class="library-grid" id="libraryGrid"></section>
+    <section class="empty-state hidden" id="libraryEmpty">
+      <h2>لا توجد وظائف هنا بعد</h2>
+      <p>ابدأ من Smart Jobs ثم ارجع هنا لمراجعة Applied وSaved في مكان واحد.</p>
+      <a class="primary-btn" href="smart-jobs.html">اذهب إلى Smart Jobs</a>
+    </section>
+  </main>
+
+  <script src="jobs-library.js"></script>
+</body>
+</html>

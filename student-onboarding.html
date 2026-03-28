@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Smart Onboarding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="student-onboarding.css">
+</head>
+<body>
+  <header class="assessment-topbar">
+    <div class="topbar-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span class="brand-copy">
+          <strong>Skill Bridge</strong>
+          <small>Smart Onboarding</small>
+        </span>
+      </a>
+
+      <nav class="topbar-links">
+        <a href="student-auth.html">Access</a>
+        <a class="active" href="student-onboarding.html">Onboarding</a>
+        <a href="student-dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="assessment-page">
+    <section class="intro-screen reveal" id="introScreen">
+      <div class="intro-visual">
+        <div class="intro-orb"></div>
+        <div class="intro-grid-card">
+          <strong>Start</strong>
+          <span>Setup Profile</span>
+          <span>Discover Path</span>
+          <span>Build Skills</span>
+          <span>Apply</span>
+          <span>Get Hired</span>
+        </div>
+      </div>
+
+      <div class="intro-copy">
+        <span class="eyebrow">Guided Experience</span>
+        <h1>خلينا نبدأ في دقيقة ونحدد مستقبلك</h1>
+        <p>هنمشي معاك خطوة بخطوة: معلوماتك، تخصصك، مهاراتك، ثم أسئلة ذكية تطلع لك أفضل مسار وخطة عملية تبدأ بها فورًا.</p>
+
+        <div class="intro-stats">
+          <article><strong>4-5 خطوات</strong><span>رحلة واضحة جدًا</span></article>
+          <article><strong>Smart Questions</strong><span>حسب تخصصك</span></article>
+          <article><strong>Roadmap</strong><span>خطة بعد النتيجة</span></article>
+        </div>
+
+        <div class="intro-note">
+          <strong>في النهاية ستحصل على:</strong>
+          <span>Best Fit + Talent DNA + Skills Gaps + Roadmap شخصية + Next Action واضح</span>
+        </div>
+
+        <div class="intro-actions">
+          <button class="primary-btn" type="button" id="startFullMode">ابدأ الرحلة الكاملة</button>
+          <button class="ghost-btn" type="button" id="startQuickMode">اختصرلي الطريق</button>
+          <button class="link-btn hidden" type="button" id="resumeDraftBtn">كمّل من حيث توقفت</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="wizard-shell hidden" id="wizardShell">
+      <aside class="wizard-side reveal">
+        <article class="side-card">
+          <span class="eyebrow">Progress</span>
+          <div class="side-progress-head">
+            <strong id="progressPercent">20%</strong>
+            <span id="stepCounter">الخطوة 1 من 5</span>
+          </div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+        </article>
+
+        <article class="side-card">
+          <span class="eyebrow">Path</span>
+          <div class="step-indicator" id="stepIndicator"></div>
+        </article>
+
+        <article class="side-card assistant-card">
+          <span class="eyebrow">Assistant</span>
+          <strong id="assistantTitle">ابدأ من هنا</strong>
+          <p id="assistantCopy">سنبدأ بمعلومات بسيطة جدًا ثم نكمل خطوة خطوة من غير أي توهان.</p>
+        </article>
+
+        <article class="side-card preview-card">
+          <div class="preview-head">
+            <span class="eyebrow">Live Preview</span>
+            <span class="preview-mode" id="previewModeLabel">Full Mode</span>
+          </div>
+
+          <div class="profile-preview">
+            <div class="preview-avatar" id="previewAvatar">🙂</div>
+            <div class="preview-copy">
+              <strong id="previewName">اسمك</strong>
+              <span id="previewField">التخصص سيظهر هنا</span>
+            </div>
+          </div>
+
+          <div class="preview-list">
+            <div><span>Phone</span><strong id="previewPhone">--</strong></div>
+            <div><span>Gender</span><strong id="previewGender">--</strong></div>
+            <div><span>Top Skills</span><strong id="previewSkills">0 selected</strong></div>
+            <div><span>Experience</span><strong id="previewExperience">No files yet</strong></div>
+          </div>
+
+          <div class="preview-tags" id="previewTags"></div>
+        </article>
+      </aside>
+
+      <section class="wizard-main">
+        <article class="question-card reveal">
+          <div class="question-head">
+            <span class="question-type" id="questionType">Step 1</span>
+            <span class="question-hint" id="questionHint">املأ المطلوب فقط</span>
+          </div>
+
+          <h2 id="questionTitle">معلوماتك الأساسية</h2>
+          <p id="questionDescription">كل صفحة هنا لها هدف واحد فقط، حتى تكون التجربة واضحة وسريعة.</p>
+
+          <div class="step-body" id="stepBody"></div>
+
+          <div class="question-actions">
+            <button class="ghost-btn" type="button" id="prevStepBtn">Back</button>
+            <button class="primary-btn" type="button" id="nextStepBtn">Next</button>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <section class="result-screen hidden" id="resultScreen">
+      <div class="result-hero reveal">
+        <span class="eyebrow">Your Result</span>
+        <h1 id="resultHeroTitle">You are best fit for: Frontend Developer</h1>
+        <p id="resultHeroCopy">قراءة ذكية سريعة بناءً على اختياراتك ومهاراتك وتفضيلاتك.</p>
+      </div>
+
+      <div class="result-grid">
+        <article class="result-card reveal">
+          <strong>Personality Type</strong>
+          <p id="resultPersonality"></p>
+        </article>
+        <article class="result-card reveal">
+          <strong>Strengths</strong>
+          <ul id="resultStrengths"></ul>
+        </article>
+        <article class="result-card reveal">
+          <strong>Skill Gaps</strong>
+          <ul id="resultWeaknesses"></ul>
+        </article>
+        <article class="result-card reveal">
+          <strong>Suitable Paths</strong>
+          <ul id="resultPaths"></ul>
+        </article>
+      </div>
+
+      <div class="insight-grid">
+        <article class="result-card reveal">
+          <strong>Talent DNA</strong>
+          <div class="dna-bars" id="resultDnaBars"></div>
+        </article>
+
+        <article class="result-card reveal roadmap-card">
+          <strong>Roadmap شخصية</strong>
+          <div class="roadmap-list" id="resultRoadmap"></div>
+        </article>
+
+        <article class="result-card reveal">
+          <strong>Thinking & Work Style</strong>
+          <p id="resultStyles"></p>
+          <div class="next-action-box">
+            <strong>Next Action</strong>
+            <p id="resultNextStep"></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="result-cta reveal">
+        <a class="primary-btn" href="learning-path.html">Start Learning</a>
+        <a class="ghost-btn" href="student-dashboard.html">افتح Dashboard</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="student-onboarding.js"></script>
+</body>
+</html>
